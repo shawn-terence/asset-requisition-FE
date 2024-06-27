@@ -9,6 +9,13 @@ export default {
       fontFamily:{
         'poppins':["Poppins", "sans-serif"],
       },
+      fontSize:{
+          "400":'1rem',
+          "500":"1.125rem",
+          "600":"1.875rem",
+          "700":"2.5rem",
+          "800":"3.5rem"
+      },
       colors:{
         neutral:{
           100:"#FFF",
