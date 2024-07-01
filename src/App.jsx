@@ -30,11 +30,11 @@ function App() {
       <Routes>
         {/* a)Auth
         b)Admin & SuperAdmin shared pages*/}
-        <Route path="/" element={<Login/>}>
+        <Route path="/" element={<Login/>}/>
         {/* Auth */}
-          <Route path="login" element={<Login/>}/>
-          <Route path="sign-up" element={ <SignUp/>}/>
-        </Route>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/sign-up" element={ <SignUp/>}/>
+
         {/* Super Admin */}
         <Route path="/super-admin" element={<SuperAdminPage/>}>
           <Route index element={<LogoIndexPage />}/>

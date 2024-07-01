@@ -9,8 +9,10 @@ export default {
     extend: {
       fontFamily:{
         'poppins':["Poppins", "sans-serif"],
+        'tilt-prism':["Tilt Prism", "sans-serif"],
       },
       fontSize:{
+          "300":'0.95rem',
           "400":'1rem',
           "500":"1.125rem",
           "600":"1.875rem",
