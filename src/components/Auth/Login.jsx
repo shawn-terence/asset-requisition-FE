@@ -8,7 +8,7 @@ const Login = () => {
     <div className="login-pg | dark:text-neutral-200 text-neutral-900">
     <div className="login-form-wrapper | flex flex-col bg-neutral-100 dark:bg-neutral-700">
       <div className="logo-dark-mode-toggle-wrapper | flex ">
-        <p className="login-logo | font-tilt-prism font-bold uppercase tracking-widest text-500  text-neutral-800 dark:text-neutral-100 ">ars</p>
+        <p className="login-logo | logo font-tilt-prism font-bold uppercase tracking-widest text-500  text-neutral-800 dark:text-neutral-100 ">ars</p>
         <DarkModeToggle/>
       </div>
       <form className="login-form | flex flex-col flow">

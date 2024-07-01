@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 :root {
-    --auth-bg-overlay: rgba(0, 48, 54, 0.705);
+    --auth-bg-overlay: rgba(0, 91, 107, 0.705);
     --primary-c: #00cee9;
 
     --primary-btn-bg: #131313;
@@ -98,16 +98,64 @@ select {
     margin-block-start: var(--spacer, 2.2em);
 }
 
+/* Logo */
+.logo {
+    cursor: pointer;
+}
+
+/* Links */
+.link {
+    position: relative;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--link-c);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: 150ms ease-in;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+}
+
 /* Buttons */
 .btn {
     padding: 0.4em 1em;
     cursor: pointer;
+    position: relative;
+    isolation: isolate;
+
+}
+
+.btn::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 180ms ease-in;
+}
+
+.btn:hover::after {
+    transform: scaleX(1);
 }
 
 
 .primary-btn {
     background-color: var(--primary-btn-bg);
     color: var(--primary-btn-c);
+    border: none;
 }
 
 
@@ -151,11 +199,17 @@ select {
     transition: 0.15s;
 }
 
-/*5. Login */
+.logo-dark-mode-toggle-wrapper {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*5. Auth */
+.sign-up-pg,
 .login-pg {
     position: relative;
     isolation: isolate;
-    background-image: url("./assets/img/login_bg.jpeg");
+    background-image: url("./assets/img/auth-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -163,85 +217,85 @@ select {
     min-height: 100vh;
 }
 
+.sign-up-pg::after,
 .login-pg::after {
     content: "";
     z-index: -1;
     position: absolute;
     inset: 0;
     background: var(--auth-bg-overlay);
-
 }
 
-
+.sign-up-form-wrapper,
 .login-form-wrapper {
-    gap: 3em;
-    width: 45%;
+    width: 51%;
     padding: 2rem 4rem;
     min-height: 100dvh;
     min-height: 100vh;
 }
 
-
-.logo-dark-mode-toggle-wrapper {
-    justify-content: space-between;
-    align-items: center;
-}
-
+.sign-up-to-login-form-redirect-link-wrapper,
+.sign-up-form,
 .login-to-sign-up-redirect-link-wrapper,
 .login-form {
     width: 85%;
     margin-inline: auto;
 }
 
+.sign-up-form,
 .login-form {
-    --spacer: 2.5em;
+    --spacer: 2.7em;
 }
 
+.sign-up-form-element-wrapper,
 .login-form-element-wrapper {
     gap: 0.57em;
 }
 
+.sign-up-form-input,
 .login-form-input {
     border: 1px solid rgb(209, 209, 209);
     padding: 0.25rem 0.5rem;
     background-color: transparent;
 }
 
+.sign-up-form-input:focus,
 .login-form-input:focus {
     border-color: var(--primary-c);
     outline: 1px solid var(--primary-c);
 }
 
+.sign-up-to-login-redirect-link-wrapper,
 .login-to-sign-up-redirect-link-wrapper {
     gap: 1.8rem;
     justify-content: center;
     margin-block-start: 5em;
 }
 
+.sign-up-form-submit-btn,
 .login-form-submit-btn {
     width: 99%;
     margin-block-start: auto;
 }
 
-.link {
-    position: relative;
+/* 5.1 Login */
+.login-form-wrapper {
+    gap: 3em;
 }
 
-.link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--link-c);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: 150ms ease-in;
+.login-to-sign-up-redirect-link-wrapper{
+    margin-block-start: 2.3rem;
+}
+/* 5.2 Sign up */
 
+.logo-dark-mode-toggle-wrapper-sign-up {
+    margin-block-start: 0.2rem;
 }
 
-.link:hover::after {
-    transform: scaleX(1);
+.sign-up-form {
+    margin-block-start: 3rem;
+}
 
+.sign-up-form-heading {
+    margin-block-end: 1rem;
 }
