@@ -60,6 +60,7 @@ function App() {
           <Route path="account-details" element={<EmployeeAccountDetails/>}/>
           <Route path="assets" element={<EmployeeAssets/>}/>
           <Route path="requests" element={<EmployeeRequests/>}/>
+          <Route path="all-assets" element={<AllAssets/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
