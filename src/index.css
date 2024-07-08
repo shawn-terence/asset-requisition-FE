@@ -16,7 +16,6 @@
     --aside-nav-hover-c: rgb(219, 219, 219);
 
     --border-radius: 4px;
-    --landing-pg-g-img: "";
 }
 
 .dark {
@@ -25,9 +24,6 @@
     --primary-btn-c: #FFF;
     --primary-btn-bg: var(--primary-c);
     --aside-nav-hover-c: var(--primary-c);
-    --landing-pg-g-img:"" ;
-
-
 }
 
 /* 1. Defaults */
@@ -165,11 +161,14 @@ select {
 }
 
 /* 3.General */
-.logo-index-pg{
+.logo-index-pg {
     min-height: 100vh;
     min-height: 100dvh;
-    background: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 /* 3. Dark Mode Component */
 .dark-mode-toggle {
     width: fit-content;
@@ -291,7 +290,7 @@ select {
 /* 5.1 Login */
 .login-form-wrapper {
     gap: 3em;
-    width: 45%;
+    width: 51%;
 }
 
 .login-to-sign-up-redirect-link-wrapper {
@@ -349,3 +348,44 @@ select {
     align-items: center;
 
 }
+
+/* 6.1.1 Employee Account Details */
+.employee-form-wrapper {
+    --max-width: 720px;
+    width: min(var(--max-width), 90%);
+    margin-block-start: 1.5rem;
+    margin-inline-end: auto;
+    margin-inline-start: 4rem;
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem 3rem 3rem;
+}
+
+.employee-account-form {
+    --max-width: 580px;
+    width: min(var(--max-width), 90%)
+}
+
+.employee-names-wrapper,
+.employee-phone-department-wrapper {
+    justify-content: space-between;
+}
+
+.employee-account-details-input {
+    border-radius: var(--border-radius);
+    border: 1px solid rgb(209, 209, 209);
+    padding: 0.25rem 0.5rem;
+    background-color: transparent;
+}
+
+
+.employee-account-details-input:focus {
+    border-color: var(--primary-c);
+    outline: 1px solid var(--primary-c);
+}
+
+
+.employee-account-form-element-wrapper {
+    gap: 0.5rem;
+}
+
+/* 6.1.1 Employee Requests */

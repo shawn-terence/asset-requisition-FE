@@ -35,7 +35,7 @@ const SignUp = () => {
         {/*Phone Number*/}
         <div className="sign-up-form-element-wrapper | flex flex-col">
           <label htmlFor="phoneNumber" className="capitalize font-semi-bold text-500">phone number</label>
-          <input className="sign-up-form-input" type="number" id="phoneNumber" name="phoneNumber" placeholder="+254701010101" required/>
+          <input className="sign-up-form-input" type="number" id="phoneNumber" name="phoneNumber" placeholder="254701010101" required/>
         </div>
         {/* Password */}
         <div className="sign-up-form-element-wrapper | flex flex-col">
