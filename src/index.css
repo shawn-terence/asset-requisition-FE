@@ -13,9 +13,10 @@
     --primary-btn-bg: #131313;
     --primary-btn-c: #FFF;
     --link-c: #131313;
-    --aside-nav-hover-c:rgb(219, 219, 219);
+    --aside-nav-hover-c: rgb(219, 219, 219);
 
-    --border-radius:4px;
+    --border-radius: 4px;
+    --landing-pg-g-img: "";
 }
 
 .dark {
@@ -23,7 +24,8 @@
     --link-c: #FFF;
     --primary-btn-c: #FFF;
     --primary-btn-bg: var(--primary-c);
-    --aside-nav-hover-c:var(--primary-c);
+    --aside-nav-hover-c: var(--primary-c);
+    --landing-pg-g-img:"" ;
 
 
 }
@@ -162,7 +164,12 @@ select {
     border: none;
 }
 
-
+/* 3.General */
+.logo-index-pg{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #000;
+}
 /* 3. Dark Mode Component */
 .dark-mode-toggle {
     width: fit-content;
@@ -292,9 +299,10 @@ select {
 }
 
 /* 5.2 Sign up */
-.sign-up-form-wrapper{
-    width:51%;
-} 
+.sign-up-form-wrapper {
+    width: 51%;
+}
+
 .logo-dark-mode-toggle-wrapper-sign-up {
     margin-block-start: 0.2rem;
 }
@@ -308,24 +316,36 @@ select {
 }
 
 /* 6. User Pages */
-.aside-nav-link{
+.aside-nav-link {
     cursor: pointer;
-    padding:0.5em 1.5em;
-    border-radius:var(--border-radius);
-    
+    padding: 0.5em 1.5em;
+    border-radius: var(--border-radius);
+
 }
+
 .aside-nav-link:hover,
-.aside-nav-link:focus{
+.aside-nav-link:focus {
     background: var(--aside-nav-hover-c);
 }
 
-.employee-pg{
+.employee-pg {
     min-height: 100vh;
     min-height: 100dvh;
 }
 
-.employee-nav-wrapper{
-    width:21%;
-    padding:2rem;
+.employee-nav-wrapper {
+    --spacer: 4em;
+    width: 24%;
+    padding: 2rem;
 }
+
+.employee-nav-list {
+    --spacer: 2.5rem;
+}
+
 /* 6.1 Employee */
+.employee-logo-dark-mode-toggle-wrapper {
+    justify-content: space-between;
+    align-items: center;
+
+}

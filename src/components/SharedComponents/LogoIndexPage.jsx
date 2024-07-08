@@ -1,6 +1,6 @@
 const LogoIndexPage = () => {
   return (
-    <div>LogoIndexPage</div>
+    <div className='logo-index-pg'>LogoIndexPage</div>
   )
 }
 
