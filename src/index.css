@@ -13,6 +13,10 @@
     --primary-btn-bg: #131313;
     --primary-btn-c: #FFF;
     --link-c: #131313;
+    --aside-nav-hover-c: rgb(219, 219, 219);
+
+    --border-radius: 4px;
+    --landing-pg-g-img: "";
 }
 
 .dark {
@@ -20,6 +24,8 @@
     --link-c: #FFF;
     --primary-btn-c: #FFF;
     --primary-btn-bg: var(--primary-c);
+    --aside-nav-hover-c: var(--primary-c);
+    --landing-pg-g-img:"" ;
 
 
 }
@@ -158,7 +164,12 @@ select {
     border: none;
 }
 
-
+/* 3.General */
+.logo-index-pg{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #000;
+}
 /* 3. Dark Mode Component */
 .dark-mode-toggle {
     width: fit-content;
@@ -228,7 +239,6 @@ select {
 
 .sign-up-form-wrapper,
 .login-form-wrapper {
-    width: 51%;
     padding: 2rem 4rem;
     min-height: 100dvh;
     min-height: 100vh;
@@ -281,12 +291,17 @@ select {
 /* 5.1 Login */
 .login-form-wrapper {
     gap: 3em;
+    width: 45%;
 }
 
-.login-to-sign-up-redirect-link-wrapper{
+.login-to-sign-up-redirect-link-wrapper {
     margin-block-start: 2.3rem;
 }
+
 /* 5.2 Sign up */
+.sign-up-form-wrapper {
+    width: 51%;
+}
 
 .logo-dark-mode-toggle-wrapper-sign-up {
     margin-block-start: 0.2rem;
@@ -298,4 +313,39 @@ select {
 
 .sign-up-form-heading {
     margin-block-end: 1rem;
+}
+
+/* 6. User Pages */
+.aside-nav-link {
+    cursor: pointer;
+    padding: 0.5em 1.5em;
+    border-radius: var(--border-radius);
+
+}
+
+.aside-nav-link:hover,
+.aside-nav-link:focus {
+    background: var(--aside-nav-hover-c);
+}
+
+.employee-pg {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.employee-nav-wrapper {
+    --spacer: 4em;
+    width: 24%;
+    padding: 2rem;
+}
+
+.employee-nav-list {
+    --spacer: 2.5rem;
+}
+
+/* 6.1 Employee */
+.employee-logo-dark-mode-toggle-wrapper {
+    justify-content: space-between;
+    align-items: center;
+
 }
