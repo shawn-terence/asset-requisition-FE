@@ -1,6 +1,9 @@
+
 const EmployeeAssets = () => {
   return (
-    <div>MyAssets</div>
+    <div className="flow">
+
+    </div>
   )
 }
 

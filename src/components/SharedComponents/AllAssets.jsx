@@ -1,6 +1,8 @@
+
 const AllAssets = () => {
   return (
-    <div>AllAssets</div>
+    <div className="flow">
+    </div>
   )
 }
 
