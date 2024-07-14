@@ -459,8 +459,48 @@ select {
 }
 
 /*6.3 Assets */
+.employee-all-asset-card-img {
+    --max-width: 300px;
+    object-fit: cover;
+    max-width: min(var(--max-width), 100%);    
+}
 
-@layers utilities{
+.employee-all-asset-card-info {
+    --spacer: 1rem;
+    
+}
 
+.employee-all-asset-card-info-p {
+    line-height: 1.7;
+    border-radius: var(--border-radius);
+}
 
+.employee-all-assets-card-btns-wrapper {
+    
+    gap: 3rem;
+    align-items: center;
+}
+
+@layer utilities {
+    .employee-all-asset-card-sm {
+        max-width: 350px;
+        margin-inline: auto;
+        padding: 2rem;
+    }
+
+    .employee-all-asset-card-md {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+    }
+
+    .employee-all-assets-card-btns-wrapper-sm {
+        justify-content: center;
+    }
+
+    .employee-all-assets-card-btns-wrapper-md {  
+        --spacer:3rem;      
+        justify-content:start;
+        align-self: flex-end;
+        
+    }
 }
