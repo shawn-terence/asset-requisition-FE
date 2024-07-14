@@ -6,7 +6,7 @@ import SignUp from './components/Auth/SignUp.jsx'
 import LogoIndexPage from './components/SharedComponents/LogoIndexPage.jsx'
 // Admin SuperAdmin Shared Components Routes
 import AddAssets from './components/SharedComponents/AddAsset.jsx'
-import AllAssets from './components/SharedComponents/AllAssets.jsx'
+import AdminSuperAdminAllAssets from './components/SharedComponents/AdminSuperAdminAllAssets.jsx'
 import Requests from './components/SharedComponents/Requests.jsx'
 // SuperAdmin components Routes
 import Accounts from './components/SuperAdmin/Accounts.jsx'
@@ -17,7 +17,8 @@ import AdminPage from './components/Admin/AdminPage'
 import AdminAccountDetails from './components/Admin/AdminAccountDetails.jsx'
 // Employee components Routes
 import EmployeePage from './components/Employee/EmployeePage.jsx'
-import EmployeeAssets from './components/Employee/EmployeeAssets.jsx'
+import EmployeeAllAssets from './components/Employee/EmployeeAllAssets.jsx'
+import EmployeeMyAssets from './components/Employee/EmployeeMyAssets.jsx'
 import EmployeeAccountDetails from './components/Employee/EmployeeAccountDetails.jsx'
 import EmployeeRequests from './components/Employee/EmployeeRequests.jsx'
 
@@ -41,7 +42,7 @@ function App() {
           <Route path="super-admin-account-details" element={<SuperAdminAccountDetails/>}/>
           {/* Admin & SuperAdmin shared pages */}
           <Route path="add-asset" element={<AddAssets/>}/>
-          <Route path="assets" element={<AllAssets/>}/>
+          <Route path="assets" element={<AdminSuperAdminAllAssets/>}/>
           <Route path="requests" element={<Requests/>}/>
           <Route path="accounts" element={<Accounts/>}/>
         </Route>
@@ -51,16 +52,16 @@ function App() {
           <Route path="account-details" element={<AdminAccountDetails/>}/>
           {/* Admin & SuperAdmin shared pages */}
           <Route path="add-asset" element={<AddAssets/>}/>
-          <Route path="assets" element={<AllAssets/>}/>
+          <Route path="assets" element={<AdminSuperAdminAllAssets/>}/>
           <Route path="requests" element={<Requests/>}/>
         </Route>
         {/* Employee */}
         <Route path="/employee" element={<EmployeePage/>}>
           <Route index element={<LogoIndexPage/>}/>
           <Route path="account-details" element={<EmployeeAccountDetails/>}/>
-          <Route path="assets" element={<EmployeeAssets/>}/>
+          <Route path="assets" element={<EmployeeMyAssets/>}/>
           <Route path="requests" element={<EmployeeRequests/>}/>
-          <Route path="all-assets" element={<AllAssets/>}/>
+          <Route path="all-assets" element={<EmployeeAllAssets/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
