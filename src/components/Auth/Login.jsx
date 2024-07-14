@@ -4,6 +4,9 @@ import DarkModeToggle from "../DarkMode/DarkModeToggle"
 
 
 const Login = () => {
+    const handleSubmit = (e) =>{
+    e.preventDefault()
+  }
   return (
     <div className="login-pg | dark:text-neutral-200 text-neutral-900">
     <div className="login-form-wrapper | flex flex-col bg-neutral-100 dark:bg-neutral-700">
@@ -11,7 +14,7 @@ const Login = () => {
         <p className="login-logo | logo font-tilt-prism font-bold uppercase tracking-widest text-500  text-neutral-800 dark:text-neutral-100 ">ars</p>
         <DarkModeToggle/>
       </div>
-      <form className="login-form | flex flex-col flow">
+      <form onSubmit={handleSubmit} className="login-form | flex flex-col flow">
         <p className="font-poppins text-700 font-semi-bold text-center capitalize">welcome back</p>
         {/* Email */}
         <div className="login-form-element-wrapper | flex flex-col">

@@ -14,11 +14,16 @@
     --primary-btn-c: #FFF;
     --link-c: #131313;
     --aside-nav-hover-c: rgb(219, 219, 219);
-
-    --border-radius: 4px;
+    --caption-color: inherit;
+    --border-radius: 10px;
+    --table-heading-c: rgb(0, 113, 141);
+    --table-row-bg-variation: rgb(231, 231, 231);
 }
 
 .dark {
+    --table-row-bg-variation: rgba(0, 0, 0, 0.301);
+    --table-heading-c: rgba(0, 0, 0, 0.3);
+    --caption-color: var(--table-heading-c);
     --auth-bg-overlay: rgba(0, 0, 0, 0.85);
     --link-c: #FFF;
     --primary-btn-c: #FFF;
@@ -342,32 +347,82 @@ select {
     --spacer: 2.5rem;
 }
 
-/* 6.1 Employee */
+/* 6.1 General */
+.employee-requests-table-wrapper {
+    padding: 0rem 3rem 2rem 2rem;
+    max-height: 94vh;
+    max-height: 94dvh;
+    overflow: auto;
+    margin-inline-start: 1rem;
+}
+
+
+.employee-requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--border-radius);
+
+}
+
+.table-caption {
+    padding-block: 2rem 0.5rem;
+    background: var(--caption-color);
+    border-radius: var(--border-radius);
+
+}
+
+.table-headings {
+    background: var(--table-heading-c);
+}
+
+.table-row:nth-child(2n) {
+    background-color: var(--table-row-bg-variation);
+}
+
+.table-heading,
+.table-data {
+
+    text-align: left;
+}
+
+.table-heading {
+    padding: 0.5rem 1rem;
+}
+
+.table-data {
+    padding: 0.7rem 1rem;
+}
+
+/* 6.2 Employee */
 .employee-logo-dark-mode-toggle-wrapper {
     justify-content: space-between;
     align-items: center;
 
 }
 
-/* 6.1.1 Employee Account Details */
-.employee-form-wrapper {
-    --max-width: 720px;
-    width: min(var(--max-width), 90%);
+.employee-form-wrapper,
+.employee-requests-table-wrapper {
     margin-block-start: 1.5rem;
     margin-inline-end: auto;
-    margin-inline-start: 4rem;
     border-radius: var(--border-radius);
+}
+
+/* 6.2.1 Employee Account Details */
+.employee-form-wrapper {
+    --max-width: 790px;
+    width: min(var(--max-width), 90%);
+    margin-inline-start: 4rem;
     padding: 2.5rem 2rem 3rem 3rem;
 }
 
 .employee-account-form {
-    --max-width: 580px;
+    --max-width: 600px;
     width: min(var(--max-width), 90%)
 }
 
 .employee-names-wrapper,
 .employee-phone-department-wrapper {
-    justify-content: space-between;
+    gap: 0.5rem;
 }
 
 .employee-account-details-input {
@@ -376,7 +431,6 @@ select {
     padding: 0.25rem 0.5rem;
     background-color: transparent;
 }
-
 
 .employee-account-details-input:focus {
     border-color: var(--primary-c);
@@ -388,4 +442,25 @@ select {
     gap: 0.5rem;
 }
 
-/* 6.1.1 Employee Requests */
+/* 6.2.2 Employee Requests */
+.employee-requests-table-wrapper {
+    --max-width: 900px;
+    width: min(var(--max-width), 100% - 3rem);
+}
+
+.employee-requests-table-actions {
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions-icon {
+    cursor: pointer;
+}
+
+/*6.3 Assets */
+
+@layers utilities{
+
+
+}

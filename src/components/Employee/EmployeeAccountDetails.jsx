@@ -1,8 +1,12 @@
 const EmployeeAccountDetails = () => {
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+  }
   return (
     <section className="employee-form-wrapper | flow shadow text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800">
       <p className="text-600 uppercase font-bold">account details</p>
-      <form className="employee-account-form | flow ">
+      <form onSubmit={handleSubmit}className="employee-account-form | flow ">
         <div className="employee-names-wrapper | flex">
        {/* First Name */}
           <div className="employee-account-form-element-wrapper | flex flex-col">
