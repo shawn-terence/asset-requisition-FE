@@ -6,7 +6,7 @@ const EmployeeNav = () => {
   return (
     <aside className="employee-nav-wrapper | shadow flow bg-neutral-100 dark:bg-neutral-600 dark:text-neutral-200">
         <div className="employee-logo-dark-mode-toggle-wrapper | flex">
-          <p className=" logo | text-550 font-tilt-prism uppercase font-semi-bold">ars</p>
+          <NavLink  className=" logo | text-550 font-tilt-prism uppercase font-semi-bold" to="/employee" >ars</NavLink>
           <DarkModeToggle/>
         </div>
         <nav className="employee-aside-nav">

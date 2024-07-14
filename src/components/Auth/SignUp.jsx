@@ -3,6 +3,10 @@ import { NavLink } from "react-router-dom"
 import DarkModeToggle from "../DarkMode/DarkModeToggle"
 
 const SignUp = () => {
+    
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+  }
   return (
  <div className="sign-up-pg | dark:text-neutral-200 text-neutral-900">
     <div className="sign-up-form-wrapper | flex flex-col bg-neutral-100 dark:bg-neutral-700">
@@ -10,7 +14,7 @@ const SignUp = () => {
         <p className="sign-up-logo | logo font-tilt-prism font-bold uppercase tracking-widest text-500  text-neutral-800 dark:text-neutral-100 ">ars</p>
         <DarkModeToggle/>
       </div>
-      <form className="sign-up-form | flex flex-col flow">
+      <form onSubmit={handleSubmit} className="sign-up-form | flex flex-col flow">
         <p className="sign-up-form-heading | font-poppins text-700 font-semi-bold text-center capitalize">create account</p>
         {/* First Name */}
         <div className="sign-up-form-element-wrapper | flex flex-col">
