@@ -18,7 +18,9 @@ export default {
           "550":"1.3rem",
           "600":"1.875rem",
           "700":"2.5rem",
-          "800":"3.5rem"
+          "800":"3.5rem",
+          "850":"5rem",
+          "900":"8rem"
       },
       colors:{
         neutral:{

@@ -8,8 +8,8 @@
 
 :root {
     --auth-bg-overlay: rgba(0, 91, 107, 0.705);
+    --error-bg-overlay: rgba(0, 91, 107, 0.705);
     --primary-c: #00cee9;
-
     --primary-btn-bg: #131313;
     --primary-btn-c: #FFF;
     --link-c: #131313;
@@ -18,20 +18,23 @@
     --border-radius: 10px;
     --table-heading-c: rgb(0, 113, 141);
     --table-row-bg-variation: rgb(231, 231, 231);
+
 }
 
 .dark {
-    --table-row-bg-variation: rgba(0, 0, 0, 0.301);
-    --table-heading-c: rgba(0, 0, 0, 0.3);
-    --caption-color: var(--table-heading-c);
     --auth-bg-overlay: rgba(0, 0, 0, 0.85);
-    --link-c: #FFF;
+    --error-bg-overlay: rgba(0, 0, 0, 0.85);
     --primary-btn-c: #FFF;
     --primary-btn-bg: var(--primary-c);
+    --link-c: #FFF;
     --aside-nav-hover-c: var(--primary-c);
+    --caption-color: var(--table-heading-c);
+    --table-heading-c: rgba(0, 0, 0, 0.3);
+    --table-row-bg-variation: rgba(0, 0, 0, 0.301);
 }
 
 /* 1. Defaults */
+/* Box sizing rules */
 /* Box sizing rules */
 *,
 *::before,
@@ -165,18 +168,40 @@ select {
     border: none;
 }
 
-.ghost-btn{
+.ghost-btn {
     background-color: transparent;
-    border:2px solid currentColor;
+    border: 2px solid currentColor;
 }
 
 /* 3.General */
+.error-pg,
 .logo-index-pg {
     min-height: 100vh;
     min-height: 100dvh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.error-pg {
+    position: relative;
+    isolation: isolate;
+}
+
+.error-pg::after {
+    content: "";
+    position: absolute;
+    z-index: -999;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--error-bg-overlay);
+    background-blend-mode: multiply;
+    backdrop-filter: blur(3.5px);
+}
+
+.error-pg-small-text {
+    margin-block-start: 0.5rem;
 }
 
 /* 3. Dark Mode Component */
@@ -324,7 +349,29 @@ select {
     margin-block-end: 1rem;
 }
 
-/* 6. User Pages */
+/* 6.User Pages */
+/* 6.1 General */
+.admin-pg-wrapper,
+.employee-pg {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* 6..1.1 User Navigation */
+.admin-nav-wrapper,
+.employee-nav-wrapper {
+    --spacer: 4em;
+    width: 24%;
+    padding: 2rem;
+}
+
+/* _______Navigation Dark Mode Toggle Wrapper________ */
+.admin-logo-dark-mode-toggle-wrapper,
+.employee-logo-dark-mode-toggle-wrapper {
+    justify-content: space-between;
+    align-items: center;
+}
+
 .aside-nav-link {
     cursor: pointer;
     padding: 0.5em 1.5em;
@@ -337,31 +384,71 @@ select {
     background: var(--aside-nav-hover-c);
 }
 
-.employee-pg {
-    min-height: 100vh;
-    min-height: 100dvh;
-}
 
-.employee-nav-wrapper {
-    --spacer: 4em;
-    width: 24%;
-    padding: 2rem;
-}
-
+.admin-nav-list,
 .employee-nav-list {
     --spacer: 2.5rem;
 }
 
-/* 6.1 General */
+/* 6.1.2 User Forms Details */
+.add-asset-form-wrapper,
+.admin-requests-table-wrapper,
+.user-account-form-wrapper,
 .employee-requests-table-wrapper {
-    padding: 0rem 3rem 2rem 2rem;
+    margin-block-start: 1.5rem;
+    margin-inline-end: auto;
+    border-radius: var(--border-radius);
+}
+
+.add-asset-form-wrapper,
+.user-account-form-wrapper {
+    --max-width: 790px;
+    width: min(var(--max-width), 90%);
+    margin-inline-start: 4rem;
+    padding: 2.5rem 2rem 3rem 3rem;
+}
+
+.add-asset-form,
+.user-account-form {
+    --max-width: 600px;
+    width: min(var(--max-width), 90%)
+}
+
+.add-asset-form-category-type-wrapper,
+.add-asset-form-tag-serial-wrapper,
+.user-account-names-wrapper,
+.user-phone-department-wrapper {
+    gap: 0.5rem;
+}
+
+.add-asset-details-input,
+.user-account-details-input {
+    border-radius: 0.5px;
+    border: 1px solid rgb(209, 209, 209);
+    padding: 0.25rem 0.5rem;
+    background-color: transparent;
+}
+
+.add-asset-details-input:focus,
+.user-account-details-input:focus {
+    border-color: var(--primary-c);
+    outline: 1px solid var(--primary-c);
+}
+
+.add-asset-form-element-wrapper,
+.user-account-form-element-wrapper {
+    gap: 0.5rem;
+}
+
+/* 6.1.3 User Tables */
+.admin-requests-table-wrapper,
+.employee-requests-table-wrapper {
     max-height: 94vh;
     max-height: 94dvh;
     overflow: auto;
-    margin-inline-start: 1rem;
 }
 
-
+.admin-requests-table,
 .employee-requests-table {
     width: 100%;
     border-collapse: collapse;
@@ -399,60 +486,16 @@ select {
 }
 
 /* 6.2 Employee */
-.employee-logo-dark-mode-toggle-wrapper {
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.employee-form-wrapper,
-.employee-requests-table-wrapper {
-    margin-block-start: 1.5rem;
-    margin-inline-end: auto;
-    border-radius: var(--border-radius);
-}
-
-/* 6.2.1 Employee Account Details */
-.employee-form-wrapper {
-    --max-width: 790px;
-    width: min(var(--max-width), 90%);
-    margin-inline-start: 4rem;
-    padding: 2.5rem 2rem 3rem 3rem;
-}
-
-.employee-account-form {
-    --max-width: 600px;
-    width: min(var(--max-width), 90%)
-}
-
-.employee-names-wrapper,
-.employee-phone-department-wrapper {
-    gap: 0.5rem;
-}
-
-.employee-account-details-input {
-    border-radius: var(--border-radius);
-    border: 1px solid rgb(209, 209, 209);
-    padding: 0.25rem 0.5rem;
-    background-color: transparent;
-}
-
-.employee-account-details-input:focus {
-    border-color: var(--primary-c);
-    outline: 1px solid var(--primary-c);
-}
-
-
-.employee-account-form-element-wrapper {
-    gap: 0.5rem;
-}
 
 /* 6.2.2 Employee Requests */
 .employee-requests-table-wrapper {
     --max-width: 900px;
+    padding: 0rem 3rem 2rem 2rem;
+    margin-inline-start: 1rem;
     width: min(var(--max-width), 100% - 3rem);
 }
 
+.admin-requests-table-actions,
 .employee-requests-table-actions {
     gap: 0.5rem;
     justify-content: center;
@@ -508,6 +551,7 @@ select {
     .employee-all-assets-card-btns-wrapper-sm {
         justify-content: center;
     }
+
     .employee-my-assets-card-btns-wrapper-md,
     .employee-all-assets-card-btns-wrapper-md {
         --spacer: 3rem;
@@ -515,4 +559,14 @@ select {
         align-self: flex-end;
 
     }
+}
+
+
+/* 6.3 Admin */
+/* 6.3.1 Requests */
+.admin-requests-table-wrapper {
+    --max-width: 1000px;
+    width: min(var(--max-width), 100% - 3rem);
+    margin-inline: auto;
+    padding: 0 0.6rem 1rem;
 }

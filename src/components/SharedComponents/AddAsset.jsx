@@ -1,6 +1,9 @@
 const AddAssets = () => {
+
   return (
-    <div>AddAssets</div>
+    <div>
+
+    </div>
   )
 }
 
