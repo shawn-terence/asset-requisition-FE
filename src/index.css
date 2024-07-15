@@ -377,7 +377,7 @@ select {
 
 /* 6.User Pages */
 /* 6.1 General */
-
+.super-admin-pg,
 .admin-pg-wrapper,
 .employee-pg {
     min-height: 100vh;
@@ -394,6 +394,7 @@ select {
 }
 
 /* 6..1.1 User Navigation */
+.super-admin-nav-wrapper,
 .admin-nav-wrapper,
 .employee-nav-wrapper {
     --spacer: 4em;
@@ -402,10 +403,17 @@ select {
 }
 
 /* _______Navigation Dark Mode Toggle Wrapper________ */
+.super-admin-logo-dark-mode-toggle-wrapper,
 .admin-logo-dark-mode-toggle-wrapper,
 .employee-logo-dark-mode-toggle-wrapper {
     justify-content: space-between;
     align-items: center;
+}
+
+.super-admin-nav-list,
+.admin-nav-list,
+.employee-nav-list {
+    --spacer: 2.5rem;
 }
 
 .aside-nav-link {
@@ -418,12 +426,6 @@ select {
 .aside-nav-link:hover,
 .aside-nav-link:focus {
     background: var(--aside-nav-hover-c);
-}
-
-
-.admin-nav-list,
-.employee-nav-list {
-    --spacer: 2.5rem;
 }
 
 /* 6.1.2 User Forms Details */

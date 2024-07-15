@@ -42,9 +42,9 @@ function App() {
           <Route index element={<LogoIndexPage/>}/>
           {/* Admin & SuperAdmin shared pages */}
           <Route path="my-account-details" element = {<UserAccountDetails/>}/>
-          <Route path="add-asset" element={<AddAssets/>}/>
-          <Route path="assets" element={<SuperAdminAllAssets/>}/>
           <Route path="requests" element={<Requests/>}/>
+          <Route path="add-asset" element={<AddAssets/>}/>
+          <Route path="all-assets" element={<SuperAdminAllAssets/>}/>          
           <Route path="accounts" element={<Accounts/>}/>
         </Route>
         {/* Admin */}
