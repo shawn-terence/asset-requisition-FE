@@ -384,6 +384,7 @@ select {
     min-height: 100dvh;
 }
 
+.super-admin-all-assets-pg,
 .employee-requests-table-wrapper,
 .employee-my-assets-pg,
 .employee-all-assets {
@@ -428,7 +429,7 @@ select {
     background: var(--aside-nav-hover-c);
 }
 
-/* 6.1.2 User Forms Details */
+/* 6.2 User Forms */
 .add-asset-form-wrapper,
 .admin-requests-table-wrapper,
 .user-account-form-wrapper,
@@ -437,6 +438,7 @@ select {
     margin-inline-end: auto;
     border-radius: var(--border-radius);
 }
+
 
 .add-asset-form-wrapper,
 .user-account-form-wrapper {
@@ -564,6 +566,7 @@ select {
 }
 
 /*6.3 Assets */
+.super-admin-all-assets-card-img,
 .admin-all-assets-card-img,
 .employee-all-asset-card-img,
 .employee-my-asset-card-img {
@@ -572,6 +575,7 @@ select {
     max-width: min(var(--max-width), 100%);
 }
 
+.super-admin-all-assets-card-info,
 .admin-all-assets-card-info,
 .employee-all-asset-card-info,
 .employee-my-asset-card-info {
@@ -579,6 +583,7 @@ select {
 
 }
 
+.super-admin-all-assets-card-info-p,
 .admin-all-assets-card-info-p,
 .employee-all-asset-card-info-p,
 .employee-my-asset-card-info-p {
@@ -586,6 +591,7 @@ select {
     border-radius: var(--border-radius);
 }
 
+.super-admin-all-assets-card-btns-wrapper,
 .employee-my-assets-card-btns-wrapper,
 .employee-all-assets-card-btns-wrapper {
     gap: 3rem;
@@ -596,6 +602,7 @@ select {
 
 @layer utilities {
 
+    .super-admin-all-assets-card-sm,
     .admin-all-assets-card-sm,
     .employee-my-asset-card-sm,
     .employee-all-asset-card-sm {
@@ -604,6 +611,7 @@ select {
         padding: 2rem;
     }
 
+    .super-admin-all-assets-card-md,
     .admin-all-assets-card-md,
     .employee-my-asset-card-md,
     .employee-all-asset-card-md {
@@ -611,19 +619,19 @@ select {
         max-width: 900px;
     }
 
+    .super-admin-all-assets-btn-wrapper,
     .admin-all-assets-btn-wrapper,
     .employee-my-assets-card-btns-wrapper-sm,
     .employee-all-assets-card-btns-wrapper-sm {
         justify-content: center;
     }
 
-    .admin-all-assets-btn-wrapper,
+    .super-admin-all-assets-btn-wrapper .admin-all-assets-btn-wrapper,
     .employee-my-assets-card-btns-wrapper-md,
     .employee-all-assets-card-btns-wrapper-md {
         --spacer: 3rem;
         justify-content: start;
         align-self: flex-end;
-
     }
 }
 
