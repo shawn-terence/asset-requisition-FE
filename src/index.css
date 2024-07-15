@@ -489,6 +489,7 @@ select {
 }
 
 /* 6.1.3 User Tables */
+.super-admin-accounts-table-wrapper,
 .add-asset-form-wrapper,
 .admin-requests-table-wrapper,
 .employee-requests-table-wrapper {
@@ -497,12 +498,26 @@ select {
     overflow: auto;
 }
 
+
+.super-admin-accounts-table,
 .admin-requests-table,
 .employee-requests-table {
     width: 100%;
     border-collapse: collapse;
     border-radius: var(--border-radius);
 
+}
+
+.super-admin-accounts-table-wrapper,
+.employee-requests-table-wrapper {
+    --max-width: 900px;
+    padding: 0rem 3rem 2rem 2rem;
+    margin-inline-start: 1rem;
+    width: min(var(--max-width), 100% - 3rem);
+}
+
+.super-admin-accounts-table-wrapper {
+    margin-inline:auto;
 }
 
 .table-caption {
@@ -534,6 +549,7 @@ select {
     padding: 0.7rem 1rem;
 }
 
+.super-admin-accounts-table-actions,
 .admin-requests-table-actions,
 .employee-requests-table-actions {
     gap: 0.5rem;
@@ -547,16 +563,9 @@ select {
 /* 6.2 Employee */
 
 /* 6.2.2 Employee Requests */
-.employee-requests-table-wrapper {
-    --max-width: 900px;
-    padding: 0rem 3rem 2rem 2rem;
-    margin-inline-start: 1rem;
-    width: min(var(--max-width), 100% - 3rem);
-}
 
-
+.super-admin-accounts-table-actions,
 .employee-requests-table-actions {
-
     justify-content: center;
     align-items: center;
 }
