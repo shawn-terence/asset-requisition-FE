@@ -7,8 +7,8 @@
 @tailwind utilities;
 
 :root {
-    --scroll-bar-c: #5cd1e0;
-    --scroll-bar-bg: rgb(161, 161, 161);
+    --scroll-bar-c: #66c5d1;
+    --scroll-bar-bg: rgb(190, 195, 202);
     --auth-bg-overlay: rgba(0, 91, 107, 0.705);
     --error-bg-overlay: rgba(0, 91, 107, 0.705);
     --primary-c: #00cee9;
@@ -377,10 +377,20 @@ select {
 
 /* 6.User Pages */
 /* 6.1 General */
+
 .admin-pg-wrapper,
 .employee-pg {
     min-height: 100vh;
     min-height: 100dvh;
+}
+
+.employee-requests-table-wrapper,
+.employee-my-assets-pg,
+.employee-all-assets {
+    flex-grow: 2;
+    max-height: 100vh;
+    max-height: 100dvh;
+    overflow-y: auto;
 }
 
 /* 6..1.1 User Navigation */
@@ -434,10 +444,18 @@ select {
     padding: 2.5rem 2rem 3rem 3rem;
 }
 
+.add-asset-form-wrapper {
+    --max-width: 800px;
+}
+
 .add-asset-form,
 .user-account-form {
     --max-width: 600px;
     width: min(var(--max-width), 90%)
+}
+
+.add-asset-form {
+    --max-width: 650px;
 }
 
 .add-asset-form-category-type-wrapper,
@@ -544,6 +562,7 @@ select {
 }
 
 /*6.3 Assets */
+.admin-all-assets-card-img,
 .employee-all-asset-card-img,
 .employee-my-asset-card-img {
     --max-width: 300px;
@@ -551,12 +570,14 @@ select {
     max-width: min(var(--max-width), 100%);
 }
 
+.admin-all-assets-card-info,
 .employee-all-asset-card-info,
 .employee-my-asset-card-info {
     --spacer: 1rem;
 
 }
 
+.admin-all-assets-card-info-p,
 .employee-all-asset-card-info-p,
 .employee-my-asset-card-info-p {
     line-height: 1.7;
@@ -569,8 +590,11 @@ select {
     align-items: center;
 }
 
+
+
 @layer utilities {
 
+    .admin-all-assets-card-sm,
     .employee-my-asset-card-sm,
     .employee-all-asset-card-sm {
         max-width: 350px;
@@ -578,17 +602,20 @@ select {
         padding: 2rem;
     }
 
+    .admin-all-assets-card-md,
     .employee-my-asset-card-md,
     .employee-all-asset-card-md {
         grid-template-columns: repeat(2, 1fr);
         max-width: 900px;
     }
 
+    .admin-all-assets-btn-wrapper,
     .employee-my-assets-card-btns-wrapper-sm,
     .employee-all-assets-card-btns-wrapper-sm {
         justify-content: center;
     }
 
+    .admin-all-assets-btn-wrapper,
     .employee-my-assets-card-btns-wrapper-md,
     .employee-all-assets-card-btns-wrapper-md {
         --spacer: 3rem;

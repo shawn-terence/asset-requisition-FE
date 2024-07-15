@@ -8,11 +8,12 @@ import LogoIndexPage from './components/SharedComponents/LogoIndexPage.jsx'
 import UserAccountDetails from './components/SharedComponents/UserAccountDetails.jsx'
 // Admin SuperAdmin Shared Components Routes
 import AddAssets from './components/SharedComponents/AddAsset.jsx'
-import AdminSuperAdminAllAssets from './components/SharedComponents/AdminSuperAdminAllAssets.jsx'
 import Requests from './components/SharedComponents/Requests.jsx'
+import AdminAllAssets from './components/Admin/AdminAllAssets.jsx'
 // SuperAdmin components Routes
-import Accounts from './components/SuperAdmin/Accounts.jsx'
 import SuperAdminPage from './components/SuperAdmin/SuperAdminPage.jsx'   
+import SuperAdminAllAssets from './components/SuperAdmin/SuperAdminAllAssets.jsx'
+import Accounts from './components/SuperAdmin/Accounts.jsx'
 // Admin components Routes
 import AdminPage from './components/Admin/AdminPage'
 
@@ -42,7 +43,7 @@ function App() {
           {/* Admin & SuperAdmin shared pages */}
           <Route path="my-account-details" element = {<UserAccountDetails/>}/>
           <Route path="add-asset" element={<AddAssets/>}/>
-          <Route path="assets" element={<AdminSuperAdminAllAssets/>}/>
+          <Route path="assets" element={<SuperAdminAllAssets/>}/>
           <Route path="requests" element={<Requests/>}/>
           <Route path="accounts" element={<Accounts/>}/>
         </Route>
@@ -52,7 +53,7 @@ function App() {
           <Route path="my-account-details" element = {<UserAccountDetails/>}/>         
           <Route path="requests" element={<Requests/>}/>
           <Route path="add-asset" element={<AddAssets/>}/>
-          <Route path="all-assets" element={<AdminSuperAdminAllAssets/>}/>
+          <Route path="all-assets" element={<AdminAllAssets/>}/>
         </Route>
         {/* Employee */}
         <Route path="/employee" element={<EmployeePage/>}>

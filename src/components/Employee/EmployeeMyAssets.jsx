@@ -1,9 +1,15 @@
-
+import EmployeeMyAssetsCard from "./EmployeeMyAssetsCard"
 
 const EmployeeMyAssets = () => {
   return (
-    <div className="flow">
-
+    <div className="employee-my-assets-pg | flow">
+      <EmployeeMyAssetsCard/>
+      <EmployeeMyAssetsCard/>
+      <EmployeeMyAssetsCard/>
+      <EmployeeMyAssetsCard/>
+      <EmployeeMyAssetsCard/>
+      <EmployeeMyAssetsCard/>
+      <EmployeeMyAssetsCard/>
     </div>
   )
 }
