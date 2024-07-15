@@ -8,14 +8,18 @@ const Login = () => {
     e.preventDefault()
   }
   return (
-    <div className="login-pg | dark:text-neutral-200 text-neutral-900">
+    <div className="login-pg | gird  dark:text-neutral-200 text-neutral-900
+    bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo.png?raw=true')]
+    dark:bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo-white.png?raw=true')]
+    
+    ">
     <div className="login-form-wrapper | flex flex-col bg-neutral-100 dark:bg-neutral-700">
       <div className="logo-dark-mode-toggle-wrapper | flex ">
-        <p className="login-logo | logo font-tilt-prism font-bold uppercase tracking-widest text-500  text-neutral-800 dark:text-neutral-100 ">ars</p>
+        <p className="login-logo | logo font-tilt-prism font-bold uppercase tracking-widest text-550  text-neutral-800 dark:text-neutral-100 ">ars</p>
         <DarkModeToggle/>
       </div>
-      <form onSubmit={handleSubmit} className="login-form | flex flex-col flow">
-        <p className="font-poppins text-700 font-semi-bold text-center capitalize">welcome back</p>
+      <p className="login-heading | font-poppins text-600 font-semi-bold text-center uppercase">log in</p>
+      <form onSubmit={handleSubmit} className="login-form | flex flex-col">
         {/* Email */}
         <div className="login-form-element-wrapper | flex flex-col">
           <label htmlFor="email " className="capitalize font-semi-bold text-500">email</label>

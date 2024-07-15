@@ -9,7 +9,7 @@
 :root {
     --scroll-bar-c: #66c5d1;
     --scroll-bar-bg: rgb(190, 195, 202);
-    --auth-bg-overlay: rgba(0, 91, 107, 0.705);
+    --auth-bg-overlay: rgba(15, 89, 102, 0.774);
     --error-bg-overlay: rgba(0, 91, 107, 0.705);
     --primary-c: #00cee9;
     --primary-btn-bg: #131313;
@@ -280,7 +280,6 @@ select {
 .login-pg {
     position: relative;
     isolation: isolate;
-    background-image: url("./assets/img/auth-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -291,14 +290,17 @@ select {
 .sign-up-pg::after,
 .login-pg::after {
     content: "";
-    z-index: -1;
+    z-index: -999;
     position: absolute;
     inset: 0;
     background: var(--auth-bg-overlay);
+    backdrop-filter: blur(3.5px);
 }
 
-.sign-up-form-wrapper,
-.login-form-wrapper {
+.login-pg{
+    padding-block-start: 1.15rem;
+}
+.sign-up-form-wrapper {
     padding: 2rem 4rem;
     min-height: 100dvh;
     min-height: 100vh;
@@ -306,14 +308,14 @@ select {
 
 .sign-up-to-login-form-redirect-link-wrapper,
 .sign-up-form,
-.login-to-sign-up-redirect-link-wrapper,
-.login-form {
+.login-to-sign-up-redirect-link-wrapper
+{
     width: 85%;
     margin-inline: auto;
 }
 
-.sign-up-form,
-.login-form {
+.sign-up-form
+{
     --spacer: 2.7em;
 }
 
@@ -349,13 +351,25 @@ select {
 }
 
 /* 5.1 Login */
-.login-form-wrapper {
-    gap: 3em;
-    width: 51%;
+.login-form-wrapper {    
+    --max-width:490px;
+    gap: 2.6rem;       
+    margin-inline: auto;
+    padding: 2rem 4rem;
+    width:min(var(--max-width), 100% - 3rem);    
+    border-radius: var(--border-radius);     
+}
+.login-form{        
+    gap:2.6rem;    
 }
 
+.login-heading{
+    border-bottom: 1px solid currentColor;
+    padding-block-end: 0.8rem;
+    
+}
 .login-to-sign-up-redirect-link-wrapper {
-    margin-block-start: 2.3rem;
+    margin-block-start: 1rem;
 }
 
 /* 5.2 Sign up */
@@ -517,7 +531,7 @@ select {
 }
 
 .super-admin-accounts-table-wrapper {
-    margin-inline:auto;
+    margin-inline: auto;
 }
 
 .table-caption {
