@@ -11,7 +11,7 @@ const EmployeeNav = () => {
         </div>
         <nav className="employee-aside-nav">
             <ul className="employee-nav-list | flow uppercase text-400 font-bold ">
-                <li className="aside-nav-link-wrapper"><NavLink className="aside-nav-link" to="/employee/account-details" >account details</NavLink></li>
+                <li className="aside-nav-link-wrapper"><NavLink className="aside-nav-link" to="/employee/my-account-details" >account details</NavLink></li>
                 <li className="aside-nav-link-wrapper"><NavLink className="aside-nav-link" to="/employee/requests" >my requests</NavLink></li>
                 <li className="aside-nav-link-wrapper"><NavLink className="aside-nav-link" to="/employee/assets">my assets</NavLink></li>
                 <li className="aside-nav-link-wrapper"><NavLink className="aside-nav-link" to="/employee/all-assets" >all assets</NavLink></li>
