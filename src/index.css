@@ -209,6 +209,10 @@ select {
     background-position: center;
 }
 
+.logo-index-pg{
+    flex-grow: 2;
+}
+
 .error-pg {
     position: relative;
     isolation: isolate;
@@ -297,9 +301,10 @@ select {
     backdrop-filter: blur(3.5px);
 }
 
-.login-pg{
+.login-pg {
     padding-block-start: 1.15rem;
 }
+
 .sign-up-form-wrapper {
     padding: 2rem 4rem;
     min-height: 100dvh;
@@ -308,14 +313,12 @@ select {
 
 .sign-up-to-login-form-redirect-link-wrapper,
 .sign-up-form,
-.login-to-sign-up-redirect-link-wrapper
-{
+.login-to-sign-up-redirect-link-wrapper {
     width: 85%;
     margin-inline: auto;
 }
 
-.sign-up-form
-{
+.sign-up-form {
     --spacer: 2.7em;
 }
 
@@ -351,23 +354,25 @@ select {
 }
 
 /* 5.1 Login */
-.login-form-wrapper {    
-    --max-width:490px;
-    gap: 2.6rem;       
+.login-form-wrapper {
+    --max-width: 490px;
+    gap: 2.6rem;
     margin-inline: auto;
     padding: 2rem 4rem;
-    width:min(var(--max-width), 100% - 3rem);    
-    border-radius: var(--border-radius);     
-}
-.login-form{        
-    gap:2.6rem;    
+    width: min(var(--max-width), 100% - 3rem);
+    border-radius: var(--border-radius);
 }
 
-.login-heading{
+.login-form {
+    gap: 2.6rem;
+}
+
+.login-heading {
     border-bottom: 1px solid currentColor;
     padding-block-end: 0.8rem;
-    
+
 }
+
 .login-to-sign-up-redirect-link-wrapper {
     margin-block-start: 1rem;
 }
