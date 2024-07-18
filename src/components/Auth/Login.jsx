@@ -1,12 +1,29 @@
 import { NavLink } from "react-router-dom"
 
 import DarkModeToggle from "../DarkMode/DarkModeToggle"
+import { useReducer } from "react"
+
+const loginReducer = (state,action) => {
+  switch(action.type){
+    case 'email':
+      return {...state,email:action.payload}
+    case 'password':
+      return {...state, password:action.payload}
+    default:
+        throw new Error("undefined action type")
+  }
+}
 
 
 const Login = () => {
+const [state,dispatch] = useReducer(loginReducer,{
+                                              email:"",
+                                              password:""
+})
     const handleSubmit = (e) =>{
     e.preventDefault()
   }
+  console.log(state)
   return (
     <div className="login-pg | grid  dark:text-neutral-200 text-neutral-900
     bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo.png?raw=true')]
@@ -23,12 +40,12 @@ const Login = () => {
         {/* Email */}
         <div className="login-form-element-wrapper | flex flex-col">
           <label htmlFor="email " className="capitalize font-semi-bold text-500">email</label>
-          <input className="login-form-input" type="email" id="email" name="email" placeholder="johndoe@mail.com" required/>
+          <input onChange= { (e) => {dispatch({type:"email",payload:e.target.value})}}className="login-form-input" type="email" id="email" name="email" placeholder="johndoe@mail.com" value={state.email}required/>
         </div>
         {/* Password */}
         <div className="login-form-element-wrapper | flex flex-col">
           <label htmlFor="password " className="capitalize font-semi-bold text-500">password</label>
-          <input className="login-form-input" type="password" id="password" name="password" required/>
+          <input onChange = {(e)=>{dispatch({type:'password',payload:e.target.value})}}className="login-form-input" type="password" id="password" name="password" value={state.password}required/>
         </div>
         <button className="login-form-submit-btn | btn primary-btn uppercase text-300 font-bold">login</button>
       </form>
