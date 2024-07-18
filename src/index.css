@@ -206,7 +206,7 @@ select {
     min-height: 100dvh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
 }
 
 .logo-index-pg{

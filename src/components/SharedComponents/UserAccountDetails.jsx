@@ -1,5 +1,7 @@
 const UserAccountDetails = () => {
 
+
+
   const handleSubmit = (e) =>{
     e.preventDefault()
   }
@@ -11,7 +13,7 @@ const UserAccountDetails = () => {
        {/* First Name */}
           <div className="user-account-form-element-wrapper | flex flex-col">
             <label htmlFor="user-account-form-firstName" className="user-account-details-label | capitalize text-500 font-semibold">first name</label>
-            <input className="user-account-details-input text-neutral-450" type="text" name="user-account-form-firstName" id="user-account-form-firstName" value="john"/>
+            <input className="user-account-details-input text-neutral-450" type="text" name="firstName" id="user-account-form-firstName" value="john"/>
           </div>
         {/* Last Name */}
           <div className="user-account-form-element-wrapper | flex flex-col">
@@ -39,7 +41,12 @@ const UserAccountDetails = () => {
         {/* change password*/}
           <div className="user-account-form-element-wrapper | flex flex-col">
             <label htmlFor="user-account-form-password" className="user-account-details-label | capitalize text-500 font-semibold">change password</label>
-            <input className="user-account-details-input text-neutral-450" type="password" name="user-account-form-password" id="user-account-form-password" />
+            <input className="user-account-details-input text-neutral-450" type="password" name="password" id="user-account-form-password" />
+          </div>
+        {/* change password*/}
+          <div className="user-account-form-element-wrapper | flex flex-col">
+            <label htmlFor="user-account-form-confirm-password" className="user-account-details-label | capitalize text-500 font-semibold">confirm changed password</label>
+            <input className="user-account-details-input text-neutral-450" type="password" name="change-password" id="user-account-form-confirm-password" />
           </div>
           <button type="submit" className="btn primary-btn uppercase text-300 font-bold">update</button>
       </form>
