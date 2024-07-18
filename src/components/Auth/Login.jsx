@@ -23,7 +23,7 @@ const [state,dispatch] = useReducer(loginReducer,{
     const handleSubmit = (e) =>{
     e.preventDefault()
   }
-  console.log(state)
+
   return (
     <div className="login-pg | grid  dark:text-neutral-200 text-neutral-900
     bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo.png?raw=true')]

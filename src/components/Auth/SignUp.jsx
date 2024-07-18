@@ -1,9 +1,41 @@
 import { NavLink } from "react-router-dom"
 
 import DarkModeToggle from "../DarkMode/DarkModeToggle"
+import { useReducer } from "react"
+
+const signUpReducer = (state,action) =>{
+  switch(action.type){
+    case "firstName":
+      return {...state,first_name:action.payload}
+    case "lastName":
+      return {...state, last_name:action.payload}
+    case "department":
+      return {...state,department:action.payload}
+    case "email":
+      return {...state,email:action.payload}
+    case "phoneNumber":
+      return {...state, phone_number:action.payload}
+    case "password":
+      return {...state, password:action.payload}
+    default :
+    throw new Error ("action type undefined")
+
+
+  }
+}
+
 
 const SignUp = () => {
-    
+  const [state,dispatch] = useReducer(signUpReducer,{
+          first_name:"",
+          last_name:"",
+          department:"",
+          email:"",
+          phone_number:"",
+          password:"",
+          role:"employee"
+    });
+console.log(state)
   const handleSubmit = (e) =>{
     e.preventDefault()
   }
@@ -19,32 +51,32 @@ const SignUp = () => {
         {/* First Name */}
         <div className="sign-up-form-element-wrapper | flex flex-col">
           <label htmlFor="firstName" className="capitalize font-semi-bold text-500">first name</label>
-          <input className="sign-up-form-input" type="text" id="firstName" name="firstName" placeholder="John" required/>
+          <input onChange = {(e)=>{dispatch({type:"firstName",payload:e.target.value})}}className="sign-up-form-input" type="text" id="firstName" name="firstName" placeholder="John" value={state.first_name} required/>
         </div>
         {/* Last Name */}
         <div className="sign-up-form-element-wrapper | flex flex-col">
           <label htmlFor="lastName" className="capitalize font-semi-bold text-500">last name</label>
-          <input className="sign-up-form-input" type="lastName" id="lastName" name="lastName" placeholder="Doe" required/>
+          <input onChange = {(e)=>{dispatch({type:"lastName",payload:e.target.value})}}className="sign-up-form-input" type="lastName" id="lastName" name="lastName" placeholder="Doe" value={state.last_name}required/>
         </div>
         {/* Department */}
         <div className="sign-up-form-element-wrapper | flex flex-col">
           <label htmlFor="department" className="capitalize font-semi-bold text-500">department</label>
-          <input className="sign-up-form-input" type="text" id="department" name="department" placeholder="Human resource" required/>
+          <input onChange = {(e)=>{dispatch({type:"department",payload:e.target.value})}}className="sign-up-form-input" type="text" id="department" name="department" placeholder="Human resource" value={state.department}required/>
         </div>
         {/* Email */}
         <div className="sign-up-form-element-wrapper | flex flex-col">
           <label htmlFor="email " className="capitalize font-semi-bold text-500">email</label>
-          <input className="sign-up-form-input" type="email" id="email" name="email" placeholder="johndoe@mail.com" required/>
+          <input onChange = {(e)=>{dispatch({type:"email",payload:e.target.value})}}className="sign-up-form-input" type="email" id="email" name="email" placeholder="johndoe@mail.com" value={state.email}required/>
         </div>
         {/*Phone Number*/}
         <div className="sign-up-form-element-wrapper | flex flex-col">
           <label htmlFor="phoneNumber" className="capitalize font-semi-bold text-500">phone number</label>
-          <input className="sign-up-form-input" type="number" id="phoneNumber" name="phoneNumber" placeholder="254701010101" required/>
+          <input onChange = {(e)=>{dispatch({type:"phoneNumber",payload:e.target.value})}}className="sign-up-form-input" type="number" id="phoneNumber" name="phoneNumber" placeholder="254701010101" value={state.phone_number}required/>
         </div>
         {/* Password */}
         <div className="sign-up-form-element-wrapper | flex flex-col">
           <label htmlFor="password " className="capitalize font-semi-bold text-500">password</label>
-          <input className="sign-up-form-input" type="password" id="password" name="password" required/>
+          <input onChange = {(e)=>{dispatch({type:"password",payload:e.target.value})}}className="sign-up-form-input" type="password" id="password" name="password" value={state.password}required/>
         </div>
         <button className="sign-up-form-submit-btn | btn primary-btn uppercase text-300 font-bold">sign-up</button>
       </form>
