@@ -299,10 +299,12 @@ select {
     inset: 0;
     background: var(--auth-bg-overlay);
     backdrop-filter: blur(3.5px);
+    
 }
 
-.login-pg {
-    padding-block-start: 1.15rem;
+.login-pg {    
+    place-items: center;
+
 }
 
 .sign-up-form-wrapper {

@@ -8,7 +8,7 @@ const Login = () => {
     e.preventDefault()
   }
   return (
-    <div className="login-pg | gird  dark:text-neutral-200 text-neutral-900
+    <div className="login-pg | grid  dark:text-neutral-200 text-neutral-900
     bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo.png?raw=true')]
     dark:bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo-white.png?raw=true')]
     
