@@ -38,7 +38,7 @@ const AddAssets = () => {
   const handleSubmit = (e) =>{
     e.preventDefault();
   }
-  console.log(state)
+
 
   return (
     <div className="add-asset-form-wrapper | flow shadow text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800">
