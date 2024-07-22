@@ -1,13 +1,13 @@
 
 const EmployeeRequestsTableRowData = (request) => {
-
+        const {title,category,price,} = request
     
   return (            
         <tr className="table-row | text-300 capitalize">
-            <td className="table-data" data-cell="name">{request.name}</td>
-            <td className="table-data" data-cell="category">{request.category}</td>
+            <td className="table-data" data-cell="name">{title}</td>
+            <td className="table-data" data-cell="category">{category}</td>
             <td className="table-data" data-cell="type">laptop</td>
-            <td className="table-data" data-cell="serial">{request.price}</td>
+            <td className="table-data" data-cell="serial">{price * 100}</td>
             <td className="table-data | lowercase italic" data-cell="status">pending...</td>
             {/* Action Buttons */}
             <td className="employee-requests-table-actions | flex table-data" data-cell="action-btns">

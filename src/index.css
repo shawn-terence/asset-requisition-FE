@@ -172,6 +172,12 @@ select {
     border: none;
 }
 
+.filter-primary-btn {
+    background-color: var(--primary-btn-bg);
+    color: var(--primary-btn-c);
+    border: 2px solid var(--primary-btn-bg);
+}
+
 .ghost-btn {
     background-color: transparent;
     border: 2px solid currentColor;
@@ -209,7 +215,7 @@ select {
     background-position: center center;
 }
 
-.logo-index-pg{
+.logo-index-pg {
     flex-grow: 2;
 }
 
@@ -299,10 +305,10 @@ select {
     inset: 0;
     background: var(--auth-bg-overlay);
     backdrop-filter: blur(3.5px);
-    
+
 }
 
-.login-pg {    
+.login-pg {
     place-items: center;
 
 }
@@ -467,6 +473,11 @@ select {
     width: min(var(--max-width), 90%);
     margin-inline-start: 4rem;
     padding: 2.5rem 2rem 3rem 3rem;
+}
+
+.user-account-form-wrapper {
+    height: fit-content;
+    margin-block-start: 2rem;
 }
 
 .add-asset-form-wrapper {
@@ -673,4 +684,42 @@ select {
     width: min(var(--max-width), 100% - 3rem);
     margin-inline: auto;
     padding: 0 0.6rem 1rem;
+}
+
+/* Search Bars */
+.total-assets-and-assets-search-wrapper{
+    justify-content: space-between;
+    
+} 
+.employee-all-assets-search-bar-wrapper {
+    margin-inline: auto;
+    width: fit-content;
+    background: #000;
+}
+
+.employee-all-assets-search-bar {
+    --max-width: 30ch;
+    max-width: var(--max-width);
+    padding-block-end: 0.25em;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid currentColor;
+
+}
+
+.employee-all-assets-search-bar:focus {
+    outline: none;
+    border-bottom: 2px solid currentColor;
+}
+
+.employee-all-assets-header {
+    margin-block: 2rem 2.3rem;
+    align-items: center;
+
+}
+
+.employee-all-assets-filter-btns {
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin-block-start: 0.8rem;
 }
