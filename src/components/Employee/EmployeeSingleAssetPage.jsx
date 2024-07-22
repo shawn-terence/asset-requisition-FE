@@ -39,7 +39,8 @@ console.log(allAssets,asset)
           <div className="employee-single-product-page-serial-tag-wrapper md:employee-single-product-page-serial-tag-wrapper-md | text-gray-600 dark:text-gray-300 capitalize flow">
             <p>serial: {asset.asset_type}</p>
             <p>tag number: {asset.serial_number}</p>
-          </div>
+          </div>          
+              <button className="employee-single-product-page-btn |  btn primary-btn uppercase text-300 font-bold">request</button>          
         </div>
       </div>
     </div>

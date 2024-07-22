@@ -633,6 +633,7 @@ select {
 }
 
 .super-admin-all-assets-card-btns-wrapper,
+.admin-all-assets-card-btns-wrapper,
 .employee-my-assets-card-btns-wrapper,
 .employee-all-assets-card-btns-wrapper {
     gap: 3rem;
@@ -667,7 +668,8 @@ select {
         justify-content: center;
     }
 
-    .super-admin-all-assets-btn-wrapper .admin-all-assets-btn-wrapper,
+    .super-admin-all-assets-btn-wrapper,
+    .admin-all-assets-btn-wrapper,
     .employee-my-assets-card-btns-wrapper-md,
     .employee-all-assets-card-btns-wrapper-md {
         --spacer: 3rem;
@@ -687,21 +689,26 @@ select {
 }
 
 /* Search Bars */
+
+.admin-total-assets-and-assets-search-wrapper,
 .employee-total-assets-and-assets-search-wrapper {
     justify-content: space-between;
 
 }
 
+.admin-all-assets-filtered-assets-wrapper,
 .employee-all-assets-filtered-assets-wrapper {
     gap: 0.8rem;
 }
 
+.admin-all-assets-search-bar-wrapper,
 .employee-all-assets-search-bar-wrapper {
     margin-inline: auto;
     width: fit-content;
 
 }
 
+.admin-all-assets-search-bar,
 .employee-all-assets-search-bar {
     --max-width: 30ch;
     max-width: var(--max-width);
@@ -712,17 +719,20 @@ select {
 
 }
 
+.admin-all-assets-search-bar:focus,
 .employee-all-assets-search-bar:focus {
     outline: none;
     border-bottom: 2px solid currentColor;
 }
 
+.admin-all-assets-header,
 .employee-all-assets-header {
     margin-block: 2rem 2.3rem;
     align-items: center;
 
 }
 
+.admin-all-assets-filter-btns,
 .employee-all-assets-filter-btns {
     flex-wrap: wrap;
     max-width: 80%;
@@ -746,6 +756,12 @@ select {
 .employee-single-product-page-type-category-wrapper,
 .employee-single-product-page-serial-tag-wrapper {
     --spacer: 0.8rem;
+}
+
+.employee-single-product-page-btn {
+    width: 95%;
+    margin-block-start: 1rem;
+    margin-inline-end: auto;
 }
 
 @layer utilities {

@@ -2,7 +2,7 @@
 
 const AdminSingleAssetPage = () => {
   return (
-    <div className="">AdminSingleAssetsPage</div>
+    <div>AdminSingleAssetsPage</div>
   )
 }
 
