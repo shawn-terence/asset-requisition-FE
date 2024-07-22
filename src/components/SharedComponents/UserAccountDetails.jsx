@@ -13,30 +13,30 @@ const UserAccountDetails = () => {
        {/* First Name */}
           <div className="user-account-form-element-wrapper | flex flex-col">
             <label htmlFor="user-account-form-firstName" className="user-account-details-label | capitalize text-500 font-semibold">first name</label>
-            <input className="user-account-details-input text-neutral-450" type="text" name="firstName" id="user-account-form-firstName" value="john"/>
+            <input className="user-account-details-input text-neutral-450" type="text" name="firstName" id="user-account-form-firstName" value="john" readOnly/>
           </div>
         {/* Last Name */}
           <div className="user-account-form-element-wrapper | flex flex-col">
             <label htmlFor="user-account-form-lastName" className="user-account-details-label | capitalize text-500 font-semibold">last name</label>
-            <input className="user-account-details-input text-neutral-450" type="text" name="lastName" id="user-account-form-lastName" value="doe"/>
+            <input className="user-account-details-input text-neutral-450" type="text" name="lastName" id="user-account-form-lastName" value="doe" readOnly/>
           </div>
         </div>
         <div className="user-phone-department-wrapper | flex">
        {/* Department */}
           <div className="user-account-form-element-wrapper | flex flex-col">
             <label htmlFor="department" className="user-account-details-label | capitalize text-500 font-semibold">department</label>
-            <input className="user-account-details-input text-neutral-450" type="text" name="department" id="user-account-form-department" value="john"/>
+            <input className="user-account-details-input text-neutral-450" type="text" name="department" id="user-account-form-department" value="john" readOnly/>
           </div>
         {/* Phone number */}
           <div className="user-account-form-element-wrapper | flex flex-col">
             <label htmlFor="phone" className="user-account-details-label | capitalize text-500 font-semibold">phone number</label>
-            <input className="user-account-details-input text-neutral-450" type="number" name="phoneNumber"id="user-account-form-phone" value="254701010101"/>
+            <input className="user-account-details-input text-neutral-450" type="number" name="phoneNumber"id="user-account-form-phone" value="254701010101" readOnly/>
           </div>
         </div>
         {/* email*/}
           <div className="user-account-form-element-wrapper | flex flex-col">
             <label htmlFor="user-account-form-email" className="user-account-details-label | capitalize text-500 font-semibold">email</label>
-            <input className="user-account-details-input text-neutral-450" type="email" name="phoneNumber" id="user-account-form-email" value="johndoe@mail.com"/>
+            <input className="user-account-details-input text-neutral-450" type="email" name="phoneNumber" id="user-account-form-email" value="johndoe@mail.com" readOnly/>
           </div>
         {/* change password*/}
           <div className="user-account-form-element-wrapper | flex flex-col">
