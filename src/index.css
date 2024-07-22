@@ -414,6 +414,7 @@ select {
 .super-admin-all-assets-pg,
 .employee-requests-table-wrapper,
 .employee-my-assets-pg,
+.admin-all-assets,
 .employee-all-assets {
     flex-grow: 2;
     max-height: 100vh;
@@ -464,6 +465,7 @@ select {
     margin-block-start: 1.5rem;
     margin-inline-end: auto;
     border-radius: var(--border-radius);
+    
 }
 
 
@@ -683,7 +685,7 @@ select {
 /* 6.3.1 Requests */
 .admin-requests-table-wrapper {
     --max-width: 1000px;
-    width: min(var(--max-width), 100% - 3rem);
+    width: min(var(--max-width), 75% - 1rem);
     margin-inline: auto;
     padding: 0 0.6rem 1rem;
 }
@@ -742,22 +744,38 @@ select {
 }
 
 /* Single Product Page Wrapper */
+.admin-single-product-page,
 .employee-single-product-page {
+    --max-width:800px;
     padding: 0.65rem 2rem 3rem;
     height: fit-content;
     margin-inline: auto;
     margin-block-start: 4rem;
+    width:min(var(--max-width),100% - 3rem);
 }
 
+.admin-single-product-page-close-btn,
 .employee-single-product-page-close-btn {
     cursor: pointer;
 }
 
+
+.admin-all-asset-card-img,
+.employee-all-asset-card-img{
+    --max-width:250px;
+object-fit: cover;
+object-position: center center;
+max-width:min(var(--max-width),100% - 1rem);
+
+} 
+
+.admin-single-product-page-type-category-wrapper,
 .employee-single-product-page-type-category-wrapper,
 .employee-single-product-page-serial-tag-wrapper {
     --spacer: 0.8rem;
 }
 
+.admin-single-product-page-btn,
 .employee-single-product-page-btn {
     width: 95%;
     margin-block-start: 1rem;
@@ -766,27 +784,33 @@ select {
 
 @layer utilities {
 
-
+    .admin-single-product-page-body-sm,
     .employee-single-product-page-body-sm {
         flex-direction: column;
         gap: 2rem;
     }
 
+    .admin-single-product-page-body-md,
     .employee-single-product-page-body-md {
         flex-direction: row;
         gap: 2.5rem;
         padding-inline-end: 2rem;
+        
 
     }
 
+    .admin-single-product-page-text-sm,
     .employee-single-product-page-text-sm {
         gap: 0.3rem;
     }
 
+    .admin-single-product-page-text-md,
     .employee-single-product-page-text-md {
         gap: 0.8rem;
+        
     }
 
+    .admin-single-product-page-description-wrapper-md,
     .employee-single-product-page-description-wrapper-md {
         --spacer: 0.3rem;
     }

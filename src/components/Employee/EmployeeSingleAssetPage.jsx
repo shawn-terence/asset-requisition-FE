@@ -8,7 +8,7 @@ const EmployeeSingleAssetPage = ({allAssets}) => {
     const asset = allAssets.find((asset)=> asset.id === parseInt(assetId))
     
     
-console.log(allAssets,asset)
+
 
 
 
