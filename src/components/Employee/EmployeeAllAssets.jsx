@@ -52,8 +52,7 @@ const EmployeeAllAssetsReducer = (state,action) =>{
   }
 
   const filterDisplay = (categories) => {
-      if(categories.length === 0 ){
-        
+      if(categories.length === 0 ){        
         setDisplayedAssets(assets)
       }
       else{           
