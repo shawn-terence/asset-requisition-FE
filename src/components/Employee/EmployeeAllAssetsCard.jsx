@@ -8,7 +8,7 @@ const EmployeeAllAssetsCard = ({asset}) => {
         return (
         <div className="md:employee-all-asset-card-md sm:employee-all-asset-card-sm | shadow grid bg-neutral-100 dark:bg-neutral-600 dark:text-neutral-200">
             {/* Card Img */}
-            <img className="employee-all-asset-card-img"
+            <img className="employee-all-asset-card-img md:md:employee-all-assets-card-img-md"
                 src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08988608.png?impolicy=Png_Res"
                 alt="unsplash-radom" />
             {/* Card Details */}
