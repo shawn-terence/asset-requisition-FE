@@ -1,5 +1,6 @@
 import EmployeeAllAssetsCard from "./EmployeeAllAssetsCard"
 import api from "../../API/BaseURL"
+import { addFilterBtns } from "../SharedComponents/SharedFunctions"
 
 import { useEffect, useReducer, useState } from "react" 
 
@@ -15,15 +16,6 @@ const EmployeeAllAssetsReducer = (state,action) =>{
 }
 
 
-const addFilterBtns = (array) =>{
-      let filter = []
-      for( const item of array){
-        if(!(filter.includes(item.category.toLowerCase()))){
-          filter.push(item.category.toLowerCase())
-        }
-      }
-      return filter
-    }
 
   const EmployeeAllAssets = () => {
   const [state,dispatch] = useReducer(EmployeeAllAssetsReducer,{
@@ -65,29 +57,31 @@ const addFilterBtns = (array) =>{
         setDisplayedAssets(assets)
       }
       else{           
-       const filteredAssets = assets.filter((asset) =>
+        const filteredAssets = assets.filter((asset) =>
         categories.includes(asset.category.toLowerCase())
       );
       setDisplayedAssets(filteredAssets)        
   }
   }
-console.log(selectedCategories)
-console.log(displayedAssets)
+
+
 
   return (
     <div className="employee-all-assets">
       <div className="container">
         <header className="employee-all-assets-header |  dark:text-neutral-200">
-          <div className="total-assets-and-assets-search-wrapper | flex">
-            <p><span className="uppercase font-bold">All assets</span>: <span
-                className="font-semibold">{assets.length}</span></p>
-            <p><span className="uppercase font-bold ">filtered assets</span>: <span
-                className="font-semibold">{displayedAssets.length}</span></p>
+          <div className="employee-total-assets-and-assets-search-wrapper | flex">
+            <div className="employee-all-assets-filtered-assets-wrapper | flex ">
+              <p><span className="uppercase font-bold">all assets</span>: <span
+                  className="font-semibold">{assets.length}</span></p>
+              <p><span className="uppercase font-bold ">filtered assets</span>: <span
+                  className="font-semibold">{displayedAssets.length}</span></p>
+            </div>
             <div className="employee-all-assets-search-bar-wrapper">
-              <input onClick={e => dispatch({type:"search",payload:e.target.value})}type="text" className="employee-all-assets-search-bar" placeholder="Search by name or type" />
+              <input onChange={e => dispatch({type:"search",payload:e.target.value})}type="text" className="employee-all-assets-search-bar" placeholder="Search by name or type" />
             </div>
           </div>
-          <div className="employee-all-assets-filter-btns">
+          <div className="employee-all-assets-filter-btns  | flex">
             {state.category.map((name)=>{
             return (<button onClick={()=>{handleCategorySelection(name)}} 
                     className={`capitalize btn  ${selectedCategories.includes(name)?"filter-primary-btn":"ghost-btn"}`}  key={name}>{name}
@@ -96,7 +90,7 @@ console.log(displayedAssets)
         </header>
       </div>
       <div className="employee-all-assets-body flow">
-      {displayedAssets.filter((asset) =>{
+      {displayedAssets.filter((asset) => {
         return (state.search.toLowerCase() === '' ? asset : asset.name.toLowerCase().includes(state.search) || asset.asset_type.toLowerCase().includes(state.search)  )
       }).map(asset => <EmployeeAllAssetsCard asset={asset} key={asset.id} />)}
       </div>
