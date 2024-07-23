@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom"
+import { useNavigate , NavLink } from "react-router-dom"
 
 import DarkModeToggle from "../DarkMode/DarkModeToggle"
 import { useReducer } from "react"
+import api from "../../API/BaseURL"
 
 const loginReducer = (state,action) => {
   switch(action.type){
@@ -16,12 +17,29 @@ const loginReducer = (state,action) => {
 
 
 const Login = () => {
-const [state,dispatch] = useReducer(loginReducer,{
+  const navigate = useNavigate()
+  const [state,dispatch] = useReducer(loginReducer,{
                                               email:"",
                                               password:""
-})
-    const handleSubmit = (e) =>{
+  })
+    const handleSubmit = async (e) =>{
     e.preventDefault()
+    try{
+      const resp = await api.post("user/login/",state)
+      localStorage.setItem('token',resp.data.token)      
+      const account = resp.data
+      if(account.role ==='employee'){
+        navigate("/employee")
+      }else if(account.role === 'admin'){
+        navigate("/admin")
+      }else if (account.role === 'superadmin'){
+        navigate("/super-admin")
+      }
+      dispatch({type:"email",payload:""})
+      dispatch({type:"password",payload:""})
+    }catch(err){
+      throw new Error("Error on log in ",err)
+    }
   }
 
   return (
