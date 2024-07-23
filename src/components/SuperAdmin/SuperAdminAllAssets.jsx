@@ -92,8 +92,8 @@ const SuperAdminAllAssets = () => {
         </div>
         <div className="super-admin-all-assets-body flow">
           {displayedAssets.filter((asset) => {
-          return (state.search.toLowerCase() === '' ? asset : asset.name.toLowerCase().includes(state.search) ||
-          asset.asset_type.toLowerCase().includes(state.search) )
+          return (state.search.toLowerCase() === '' ? asset : asset.name.toLowerCase().includes(state.search.toLowerCase()) ||
+          asset.asset_type.toLowerCase().includes(state.search.toLowerCase()) )
           }).map(asset =>
           <SuperAdminAllAssetsCard asset={asset} key={asset.id} />)}
         </div>
