@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom"
-
 import DarkModeToggle from "../DarkMode/DarkModeToggle"
+import api from "../../API/BaseURL"
+
+import {useNavigate, NavLink } from "react-router-dom"
 import { useReducer } from "react"
 
 const signUpReducer = (state,action) =>{
@@ -26,6 +27,7 @@ const signUpReducer = (state,action) =>{
 
 
 const SignUp = () => {
+  const navigate = useNavigate()
   const [state,dispatch] = useReducer(signUpReducer,{
           first_name:"",
           last_name:"",
@@ -35,9 +37,21 @@ const SignUp = () => {
           password:"",
           role:"employee"
     });
-console.log(state)
-  const handleSubmit = (e) =>{
+
+  const handleSubmit = async (e) =>{
     e.preventDefault()
+
+    try{
+      const resp =  await api.post("user/register/",state)
+      const account  = resp.data
+      console.log(account)
+      localStorage.setItem('token', account.token)
+      navigate("/employee")
+    }catch(err){
+      throw new Error ("Error singing up", err)
+    }
+
+
   }
   return (
  <div className="sign-up-pg | dark:text-neutral-200 text-neutral-900">
