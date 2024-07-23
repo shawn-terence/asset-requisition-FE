@@ -777,12 +777,14 @@ select {
 
 }
 
+.super-admin-single-product-page-type-category-wrapper,
 .admin-single-product-page-type-category-wrapper,
 .employee-single-product-page-type-category-wrapper,
 .employee-single-product-page-serial-tag-wrapper {
     --spacer: 0.8rem;
 }
 
+.super-admin-single-product-page-btn,
 .admin-single-product-page-btn,
 .employee-single-product-page-btn {
     width: 95%;
@@ -792,12 +794,14 @@ select {
 
 @layer utilities {
 
+    .super-admin-single-product-page-body-sm,
     .admin-single-product-page-body-sm,
     .employee-single-product-page-body-sm {
         flex-direction: column;
         gap: 2rem;
     }
 
+    .super-admin-single-product-page-body-md,
     .admin-single-product-page-body-md,
     .employee-single-product-page-body-md {
         flex-direction: row;
@@ -807,17 +811,20 @@ select {
 
     }
 
+    .super-admin-single-product-page-text-sm,
     .admin-single-product-page-text-sm,
     .employee-single-product-page-text-sm {
         gap: 0.3rem;
     }
 
+    .super-admin-single-product-page-text-md,
     .admin-single-product-page-text-md,
     .employee-single-product-page-text-md {
         gap: 0.8rem;
 
     }
 
+    .super-admin-single-product-page-description-wrapper-md,
     .admin-single-product-page-description-wrapper-md,
     .employee-single-product-page-description-wrapper-md {
         --spacer: 0.3rem;

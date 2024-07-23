@@ -19,7 +19,7 @@ const SuperAdminAllAssetsCard = ({asset}) => {
             {/* Card Btn */}
             <div className="sm:super-admin-all-assets-card-btns-wrapper-sm md:super-admin-all-assets-card-btns-wrapper-md super-admin-all-assets-card-btns-wrapper | flex">
                 <button className="btn primary-btn uppercase text-300 font-bold">delete</button>
-                <Link className="link capitalize" to={`assets/${id}`}>details</Link>
+                <Link className="link capitalize" to={`asset/${id}`}>details</Link>
             </div>
         </div>
     </div>
