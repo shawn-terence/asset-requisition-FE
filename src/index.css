@@ -411,7 +411,7 @@ select {
     min-height: 100dvh;
 }
 
-.super-admin-all-assets-pg,
+.super-admin-all-assets,
 .employee-requests-table-wrapper,
 .employee-my-assets-pg,
 .admin-all-assets,
@@ -465,7 +465,7 @@ select {
     margin-block-start: 1.5rem;
     margin-inline-end: auto;
     border-radius: var(--border-radius);
-    
+
 }
 
 
@@ -691,18 +691,20 @@ select {
 }
 
 /* Search Bars */
-
+.super-admin-total-assets-and-assets-search-wrapper,
 .admin-total-assets-and-assets-search-wrapper,
 .employee-total-assets-and-assets-search-wrapper {
     justify-content: space-between;
 
 }
 
+.super-admin-all-assets-filtered-assets-wrapper,
 .admin-all-assets-filtered-assets-wrapper,
 .employee-all-assets-filtered-assets-wrapper {
     gap: 0.8rem;
 }
 
+.super-admin-all-assets-search-bar-wrapper,
 .admin-all-assets-search-bar-wrapper,
 .employee-all-assets-search-bar-wrapper {
     margin-inline: auto;
@@ -710,6 +712,7 @@ select {
 
 }
 
+.super-admin-all-assets-search-bar,
 .admin-all-assets-search-bar,
 .employee-all-assets-search-bar {
     --max-width: 30ch;
@@ -721,12 +724,14 @@ select {
 
 }
 
+.super-admin-all-assets-search-bar:focus,
 .admin-all-assets-search-bar:focus,
 .employee-all-assets-search-bar:focus {
     outline: none;
     border-bottom: 2px solid currentColor;
 }
 
+.super-admin-all-assets-header,
 .admin-all-assets-header,
 .employee-all-assets-header {
     margin-block: 2rem 2.3rem;
@@ -734,6 +739,7 @@ select {
 
 }
 
+.super-admin-all-assets-filter-btns,
 .admin-all-assets-filter-btns,
 .employee-all-assets-filter-btns {
     flex-wrap: wrap;
@@ -744,30 +750,32 @@ select {
 }
 
 /* Single Product Page Wrapper */
+.super-admin-single-product-page,
 .admin-single-product-page,
 .employee-single-product-page {
-    --max-width:800px;
+    --max-width: 800px;
     padding: 0.65rem 2rem 3rem;
     height: fit-content;
     margin-inline: auto;
     margin-block-start: 4rem;
-    width:min(var(--max-width),100% - 3rem);
+    width: min(var(--max-width), 100% - 3rem);
 }
 
+.super-admin-single-product-page-close-btn,
 .admin-single-product-page-close-btn,
 .employee-single-product-page-close-btn {
     cursor: pointer;
 }
 
-
+.super-admin-all-asset-card-img,
 .admin-all-asset-card-img,
-.employee-all-asset-card-img{
-    --max-width:250px;
-object-fit: cover;
-object-position: center center;
-max-width:min(var(--max-width),100% - 1rem);
+.employee-all-asset-card-img {
+    --max-width: 250px;
+    object-fit: cover;
+    object-position: center center;
+    max-width: min(var(--max-width), 100% - 1rem);
 
-} 
+}
 
 .admin-single-product-page-type-category-wrapper,
 .employee-single-product-page-type-category-wrapper,
@@ -795,7 +803,7 @@ max-width:min(var(--max-width),100% - 1rem);
         flex-direction: row;
         gap: 2.5rem;
         padding-inline-end: 2rem;
-        
+
 
     }
 
@@ -807,7 +815,7 @@ max-width:min(var(--max-width),100% - 1rem);
     .admin-single-product-page-text-md,
     .employee-single-product-page-text-md {
         gap: 0.8rem;
-        
+
     }
 
     .admin-single-product-page-description-wrapper-md,
