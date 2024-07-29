@@ -1,7 +1,7 @@
 
 
 import DarkModeToggle from "../DarkMode/DarkModeToggle"
-import { useReducer } from "react"
+import { useReducer,useState } from "react"
 import api from "../../API/BaseURL"
 
 import { useNavigate , NavLink } from "react-router-dom"
@@ -12,8 +12,7 @@ const loginReducer = (state,action) => {
       return {...state,email:action.payload}
     case 'password':
       return {...state, password:action.payload}
-    case'passwordVisibility':
-      return {...state, passwordVisibility:!state.passwordVisibility}    
+  
     default:
         throw new Error("undefined action type")
   }
@@ -21,7 +20,7 @@ const loginReducer = (state,action) => {
 
 
 const Login = () => {
-  
+  const [passwordVisibility,setPasswordVisibility] = useState(false)
   const navigate = useNavigate()
   const [state,dispatch] = useReducer(loginReducer,{
                                               email:"",
@@ -51,6 +50,10 @@ const Login = () => {
     }
   }
 
+  const handlePasswordVisibility =()=>{
+    setPasswordVisibility(!passwordVisibility)
+  }
+
   return (
     <div className="login-pg | grid  dark:text-neutral-200 text-neutral-900
     bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo.png?raw=true')]
@@ -73,9 +76,9 @@ const Login = () => {
         <div className="login-form-element-wrapper | flex flex-col">
           <label htmlFor="password " className="capitalize font-semi-bold text-500">password</label>
           <div className="login-form-password-input-wrapper | flex">          
-          <input onChange = {(e)=>{dispatch({type:'password',payload:e.target.value})}} className="login-form-password-input " type={state.passwordVisibility?"text":"password"} id="password" name="password" value={state.password}required/>
-          {state.passwordVisibility ? (
-                            <svg onClick={() =>{dispatch({type:"passwordVisibility"})}}
+          <input onChange = {(e)=>{dispatch({type:'password',payload:e.target.value})}} className="login-form-password-input " type={passwordVisibility?"text":"password"} id="password" name="password" value={state.password}required/>
+          {passwordVisibility ? (
+                            <svg onClick={() =>{handlePasswordVisibility()}}
                                 className="user-account-details-password-visibility-icon size-5"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -96,7 +99,7 @@ const Login = () => {
                                 />
                             </svg>
                         ) : (
-                            <svg onClick={() =>{dispatch({type:"passwordVisibility"})}}
+                            <svg onClick={() =>{handlePasswordVisibility()}}
                                 className="user-account-details-password-visibility-icon size-5"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
