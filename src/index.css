@@ -310,7 +310,6 @@ select {
 
 .login-pg {
     place-items: center;
-
 }
 
 .sign-up-form-wrapper {
@@ -346,6 +345,26 @@ select {
 .login-form-input:focus {
     border-color: var(--primary-c);
     outline: 1px solid var(--primary-c);
+}
+
+.login-form-password-input-wrapper {
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.login-form-password-input-wrapper:focus-within {
+    border-color: var(--primary-c);
+    outline: 1px solid var(--primary-c);
+}
+
+.login-form-password-input {
+    padding: 0.25rem 0.5rem;
+    background-color: transparent;
+}
+
+.login-form-password-input:focus-within {
+    outline: none;
 }
 
 .sign-up-to-login-redirect-link-wrapper,
@@ -515,7 +534,7 @@ select {
 }
 
 .user-account-details-password-input-field-wrapper {
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     min-width: 100%;
     border: 1px solid rgb(209, 209, 209);
@@ -532,7 +551,7 @@ select {
 
 }
 
-.user-account-details-password-visibility-icon{
+.user-account-details-password-visibility-icon {
     cursor: pointer;
 }
 
