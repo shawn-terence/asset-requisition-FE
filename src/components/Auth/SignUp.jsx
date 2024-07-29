@@ -20,6 +20,8 @@ const signUpReducer = (state,action) =>{
       return {...state, phone_number:action.payload}
     case "password":
       return {...state, password:action.payload}
+    case'passwordVisibility':
+      return {...state, passwordVisibility:!state.passwordVisibility} 
     default :
     throw new Error ("action type undefined")
 
