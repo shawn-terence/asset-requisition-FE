@@ -33,6 +33,8 @@ import { useEffect,useState } from 'react'
 import api from './API/BaseURL.jsx'
 
 function App() {
+
+  const [userAccount, setUserAccount] = useState({})
   const [assets,setAssets] = useState([])
     useEffect(()=>{
         const fetchAssets = async () =>{
@@ -53,16 +55,16 @@ function App() {
 
         {/* a)Auth
         b)Admin & SuperAdmin shared pages*/}
-        <Route path="/" element={<Login/>}/>
+        <Route path="/" element={<Login handleGetUserAccount={setUserAccount}/>}/>
         {/* Auth */}
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/sign-up" element={<SignUp/>}/>
+          <Route path="/login" element={<Login handleGetUserAccount={setUserAccount}/>}/>
+          <Route path="/sign-up" element={<SignUp handleGetUserAccount={setUserAccount}/>}/>
 
         {/* Super Admin */}
         <Route path="/super-admin" element={<SuperAdminPage/>}>
           <Route index element={<LogoIndexPage/>}/>
           {/* Admin & SuperAdmin shared pages */}
-          <Route path="my-account-details" element = {<UserAccountDetails/>}/>
+          <Route path="my-account-details" element = {<UserAccountDetails userAccount={userAccount}/>}/>
           <Route path="requests" element={<Requests/>}/>
           <Route path="add-asset" element={<AddAssets/>}/>
           <Route path="all-assets" element={<SuperAdminAllAssets/>}/>          
@@ -72,7 +74,7 @@ function App() {
         {/* Admin */}
         <Route path="/admin" element={<AdminPage/>}>
           <Route index element={<LogoIndexPage/>}/>
-          <Route path="my-account-details" element = {<UserAccountDetails/>}/>         
+          <Route path="my-account-details" element = {<UserAccountDetails userAccount={userAccount}/>}/>         
           <Route path="requests" element={<Requests/>}/>
           <Route path="add-asset" element={<AddAssets/>}/>
           <Route path="all-assets" element={<AdminAllAssets/>}/>
@@ -81,7 +83,7 @@ function App() {
         {/* Employee */}
         <Route path="/employee" element={<EmployeePage/>}>
           <Route index element={<LogoIndexPage/>}/>
-          <Route path="my-account-details" element = {<UserAccountDetails/>}/>          
+          <Route path="my-account-details" element = {<UserAccountDetails userAccount={userAccount}/>}/>          
           <Route path="assets" element={<EmployeeMyAssets/>}/>
           <Route path="requests" element={<EmployeeRequests/>}/>
           <Route path="all-assets" element={<EmployeeAllAssets/>}/>

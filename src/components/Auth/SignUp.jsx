@@ -1,8 +1,10 @@
+
 import DarkModeToggle from "../DarkMode/DarkModeToggle"
 import api from "../../API/BaseURL"
 
 import {useNavigate, NavLink } from "react-router-dom"
 import { useReducer } from "react"
+
 
 const signUpReducer = (state,action) =>{
   switch(action.type){
@@ -44,9 +46,16 @@ const SignUp = () => {
     try{
       const resp =  await api.post("user/register/",state)
       const account  = resp.data
-      console.log(account)
       localStorage.setItem('token', account.token)
+      localStorage.setItem('arsUserAccount',JSON.stringify(account))
       navigate("/employee")
+      dispatch({type:"firstName", payload:""})
+      dispatch({type:"lastName", payload:""})     
+      dispatch({type:"department", payload:""})
+      dispatch({type:"email", payload:""})
+      dispatch({type:"phoneNumber", payload:""})
+      dispatch({type:"password", payload:""})
+
     }catch(err){
       throw new Error ("Error singing up", err)
     }
@@ -104,3 +113,5 @@ const SignUp = () => {
 }
 
 export default SignUp
+
+
