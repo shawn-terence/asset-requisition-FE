@@ -24,41 +24,41 @@ const Login = () => {
   const navigate = useNavigate()
   const [state,dispatch] = useReducer(loginReducer,{
                                               email:"",
-                                              password:"",
-                                              passwordVisibility:false
+                                              password:""                                              
   })
     const handleSubmit = async (e) =>{
     e.preventDefault()
+    
     try{
       const resp = await api.post("user/login/",state)
       localStorage.setItem('token',resp.data.token)  
-      const account = resp.data
-      localStorage.setItem('arsUserAccount',JSON.stringify(account))  
-       
-      if(account.role ==='employee'){
+      const user = resp.data.user
+      
+      localStorage.setItem('arsUserAccount',JSON.stringify(user))         
+      if(user.role === 'employee'){
         navigate("/employee")
-      }else if(account.role === 'admin'){
+      }else if(user.role === 'admin'){
         navigate("/admin")
-      }else if (account.role === 'superadmin'){
+      }else if (user.role === 'superadmin'){
         navigate("/super-admin")
       }
       dispatch({type:"email",payload:""})
       dispatch({type:"password",payload:""})
       
     }catch(err){
-      throw new Error("Error on log in ",err)
+      throw new Error("Error on log in ", err)
     }
   }
 
   const handlePasswordVisibility =()=>{
     setPasswordVisibility(!passwordVisibility)
   }
+  
 
   return (
     <div className="login-pg | grid  dark:text-neutral-200 text-neutral-900
     bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo.png?raw=true')]
     dark:bg-[url('https://github.com/Fuego-fuego/asset-requisition-FE/blob/main/public/assets-requisition-system-high-resolution-logo-white.png?raw=true')]
-    
     ">
     <div className="login-form-wrapper | flex flex-col bg-neutral-100 dark:bg-neutral-700">
       <div className="logo-dark-mode-toggle-wrapper | flex ">
@@ -99,7 +99,7 @@ const Login = () => {
                                 />
                             </svg>
                         ) : (
-                            <svg onClick={() =>{handlePasswordVisibility()}}
+                            <svg onClick={() => {handlePasswordVisibility()}}
                                 className="user-account-details-password-visibility-icon size-5"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
