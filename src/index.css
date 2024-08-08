@@ -347,22 +347,29 @@ select {
     outline: 1px solid var(--primary-c);
 }
 
+.sign-up-form-password-input-wrapper,
 .login-form-password-input-wrapper {
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border: 1px solid rgb(209, 209, 209);
 }
 
+.sign-up-form-password-input-wrapper:focus-within,
 .login-form-password-input-wrapper:focus-within {
     border-color: var(--primary-c);
     outline: 1px solid var(--primary-c);
 }
 
+.sign-up-form-password-input,
 .login-form-password-input {
     padding: 0.25rem 0.5rem;
     background-color: transparent;
 }
 
+.sign-up-form-password-input{    
+    min-width:94%;
+}
+.sign-up-form-password-input:focus-within,
 .login-form-password-input:focus-within {
     outline: none;
 }

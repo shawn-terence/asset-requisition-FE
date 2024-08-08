@@ -1,4 +1,4 @@
-
+import api from "../../API/BaseURL"
 import { useReducer,useEffect, useState } from "react"
 
 const userAccountDetailsReducer = (state,action) => {
@@ -26,22 +26,44 @@ const UserAccountDetails = () => {
     });
 
     const [userAccount, setUserAccount] = useState({});
-
-    const localStoredAccount = JSON.parse(
-        localStorage.getItem('arsUserAccount')
-    );
-
+    const [token,setToken] = useState("");
+    
     useEffect(() => {
+        const localStoredAccount = JSON.parse(localStorage.getItem('arsUserAccount'));    
         if (localStoredAccount) {
-            setUserAccount(localStoredAccount);
+            setUserAccount(localStoredAccount)
+            setToken(localStorage.getItem('token'))
         }
      // eslint-disable-next-line react-hooks/exhaustive-deps   
     }, []);
-
+        
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
+        const handleUpdate = async () =>{
+            try{
+                if(state.changePassword === state.confirmPassword){
+                const resp = api.put('user/updatepassword/',{"password":state.changePassword},
+                        {
+                            headers: {
+                            'Authorization':`Token ${token}`
+                        }
+                        }
+                    )
+                dispatch({type:"changePassword",payload:""})
+                dispatch({type:"confirmPassword",payload:""})
+                }
+                else{
+                    console.error("changed password and confirmed password does not match")
+                }
+            }
+            catch(err){
+                throw new Error (err)
+            }
+        } 
+        handleUpdate()
     };
 
+        
     return (
         <div className="user-account-form-wrapper | flow shadow text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800">
             <p className="text-600 uppercase font-bold">account details</p>

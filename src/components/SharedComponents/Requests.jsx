@@ -1,5 +1,5 @@
 import { useReducer} from "react"
-
+import RequestsTableDataRow from "./RequestsTableDataRow"
 
 const requestsReducer = (state,action) =>{
   switch(action.type){
@@ -52,7 +52,7 @@ console.log(state.search)
             <th className="table-heading"></th>
           </tr>
           {/* ------------------ */}
-    
+          <RequestsTableDataRow/>
           {/* ------------------ */}
         </table>
       </div>

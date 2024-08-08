@@ -35,7 +35,7 @@ const EmployeeAllAssetsReducer = (state,action) =>{
         setDisplayedAssets(resp.data)
       }
       catch(err){
-        console.error("Error fetching data: ",err)
+      throw new Error("Error fetching data: ",err)
       }
     }
     fetchAssets()
