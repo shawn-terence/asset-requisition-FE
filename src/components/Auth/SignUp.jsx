@@ -46,11 +46,8 @@ const SignUp = () => {
 
     try{
       const resp =  await api.post("user/register/",state)
-      const user  = resp.data.user
-      localStorage.setItem('token', resp.data.token)
-      localStorage.setItem('arsUserAccount',JSON.stringify(user))
-      console.log(resp.data)
-      navigate("/employee")
+      const user  = resp.data      
+      navigate("/login")
       dispatch({type:"firstName", payload:""})
       dispatch({type:"lastName", payload:""})     
       dispatch({type:"department", payload:""})

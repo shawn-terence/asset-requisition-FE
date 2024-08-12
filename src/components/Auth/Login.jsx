@@ -32,8 +32,7 @@ const Login = () => {
     try{
       const resp = await api.post("user/login/",state)
       localStorage.setItem('token',resp.data.token)  
-      const user = resp.data.user
-      
+      const user = resp.data.user      
       localStorage.setItem('arsUserAccount',JSON.stringify(user))         
       if(user.role === 'employee'){
         navigate("/employee")
@@ -46,6 +45,7 @@ const Login = () => {
       dispatch({type:"password",payload:""})
       
     }catch(err){
+      alert("Failed to login : wrong password or email has been entered")
       throw new Error("Error on log in ", err)
     }
   }

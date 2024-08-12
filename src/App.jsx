@@ -41,7 +41,6 @@ function App() {
             try{
                 const resp = await api.get('assets/allassets/')
                 setAssets(( resp.data))
-
             }catch(err){
                 console.log("Error fetching assets:", err)
             }
