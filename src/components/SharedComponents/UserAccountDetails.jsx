@@ -27,9 +27,9 @@ const UserAccountDetails = () => {
 
     const [userAccount, setUserAccount] = useState({});
     const [token,setToken] = useState("");
-    
+    const localStoredAccount = localStorage.getItem('arsUserAccount') ? JSON.parse(localStorage.getItem('arsUserAccount')) : false
+
     useEffect(() => {
-        const localStoredAccount = JSON.parse(localStorage.getItem('arsUserAccount'));    
         if (localStoredAccount) {
             setUserAccount(localStoredAccount)
             setToken(localStorage.getItem('token'))
@@ -49,14 +49,15 @@ const UserAccountDetails = () => {
                         }
                         }
                     )
-                dispatch({type:"changePassword",payload:""})
                 dispatch({type:"confirmPassword",payload:""})
+                dispatch({type:"changePassword",payload:""})
                 }
                 else{
-                    console.error("changed password and confirmed password does not match")
+                    alert("changed password and confirmed password does not match")
                 }
             }
             catch(err){
+                alert(err.message)
                 throw new Error (err)
             }
         } 
