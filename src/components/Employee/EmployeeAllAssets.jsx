@@ -61,7 +61,7 @@ const EmployeeAllAssetsReducer = (state,action) =>{
       );
       setDisplayedAssets(filteredAssets)        
   }
-  }
+    }
 
 
 

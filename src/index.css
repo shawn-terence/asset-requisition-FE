@@ -366,9 +366,10 @@ select {
     background-color: transparent;
 }
 
-.sign-up-form-password-input{    
-    min-width:94%;
+.sign-up-form-password-input {
+    min-width: 94%;
 }
+
 .sign-up-form-password-input:focus-within,
 .login-form-password-input:focus-within {
     outline: none;
@@ -755,15 +756,21 @@ select {
 
 }
 
+.employee-total-requests-and-requests-search-wrapper {
+    gap: 4rem;
+}
+
 .super-admin-all-assets-filtered-assets-wrapper,
 .admin-all-assets-filtered-assets-wrapper,
-.employee-all-assets-filtered-assets-wrapper {
+.employee-all-assets-filtered-assets-wrapper,
+.employee-total-requests-filtered-requests-wrapper {
     gap: 0.8rem;
 }
 
 .super-admin-all-assets-search-bar-wrapper,
 .admin-all-assets-search-bar-wrapper,
-.employee-all-assets-search-bar-wrapper {
+.employee-all-assets-search-bar-wrapper,
+.employee-requests-search-bar-wrapper {
     margin-inline: auto;
     width: fit-content;
 
@@ -771,7 +778,8 @@ select {
 
 .super-admin-all-assets-search-bar,
 .admin-all-assets-search-bar,
-.employee-all-assets-search-bar {
+.employee-all-assets-search-bar,
+.employee-requests-search-bar {
     --max-width: 30ch;
     max-width: var(--max-width);
     padding-block-end: 0.25em;
@@ -781,9 +789,12 @@ select {
 
 }
 
+
+
 .super-admin-all-assets-search-bar:focus,
 .admin-all-assets-search-bar:focus,
-.employee-all-assets-search-bar:focus {
+.employee-all-assets-search-bar:focus,
+.employee-requests-search-bar {
     outline: none;
     border-bottom: 2px solid currentColor;
 }
@@ -794,6 +805,11 @@ select {
     align-items: center;
 }
 
+.employee-requests-header {
+    margin-block: 2rem 1rem;
+    align-items: center;
+}
+
 .admin-all-assets-header {
     margin-block: 2rem;
     align-items: center;
@@ -801,7 +817,8 @@ select {
 
 .super-admin-all-assets-filter-btns,
 .admin-all-assets-filter-btns,
-.employee-all-assets-filter-btns {
+.employee-all-assets-filter-btns,
+.employee-requests-filter-btns {
     flex-wrap: wrap;
     max-width: 80%;
     margin-block-start: 0.8rem;
