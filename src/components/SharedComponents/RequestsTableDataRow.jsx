@@ -1,7 +1,11 @@
+import PropTypes from 'prop-types'
 
-
-const RequestsTableDataRow = () => {
-  return (
+const RequestsTableDataRow = ({request}) => {
+    const {asset,employee} = request
+    // console.log(asset,employee)
+    const {first_name,last_name,department,phone_number} = employee
+    const {name,asset_type,serial_number} = asset 
+    return (
     <tr className="table-row | text-300 capitalize">
         <td className="table-data-request-view-icon" data-cell="employee-name">
             <div className="details-icon | stroke-accent-700 actions-icon">
@@ -12,12 +16,12 @@ const RequestsTableDataRow = () => {
                 </svg>
             </div>
         </td>
-        <td className="table-data" data-cell="employee-name">John Doe</td>
-        <td className="table-data" data-cell="department">human resource</td>
-        <td className="table-data" data-cell="asset-name">HP Pavilion Laptop 16-ag0087nr</td>
-        <td className="table-data" data-cell="type">laptop</td>
-        <td className="table-data" data-cell="serial">00000000</td>
-        <td className="table-data | lowercase italic" data-cell="status">254701010101</td>
+        <td className="table-data" data-cell="employee-name">{`${first_name} ${last_name}`}</td>
+        <td className="table-data" data-cell="department">{department}</td>
+        <td className="table-data" data-cell="asset-name">{name}</td>
+        <td className="table-data" data-cell="type">{asset_type}</td>
+        <td className="table-data" data-cell="serial">{serial_number}</td>
+        <td className="table-data | lowercase italic" data-cell="status">{phone_number}</td>
         {/* Action Buttons */}
         <td className="admin-requests-table-actions | flex table-data" data-cell="action-btns">
             <button
@@ -30,3 +34,7 @@ const RequestsTableDataRow = () => {
 }
 
 export default RequestsTableDataRow
+
+RequestsTableDataRow.propTypes = {
+    request:PropTypes.object
+}
